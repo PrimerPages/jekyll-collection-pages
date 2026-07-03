@@ -1,4 +1,4 @@
-theme: jekyll-theme-profile
+theme: jekyll-theme-primerpages
 style: topbar
 title: Jekyll Collection Pages plugin
 repository: PrimerPages/jekyll-collection-pages
@@ -75,7 +75,6 @@ relative_links:
 plugins:
   - jekyll-paginate
   - jekyll-collection-pages
-  - jekyll-github-metadata
   - jekyll-octicons
   - jekyll-relative-links
   - jekyll-seo-tag

@@ -9,11 +9,13 @@ gem 'webrick', '~> 1.8'
 
 group :jekyll_plugins do
   gem 'jekyll-feed'
+  gem 'jekyll-octicons'
   gem 'jekyll-paginate'
   gem 'jekyll-redirect-from'
   gem 'jekyll-relative-links'
   gem 'jekyll-sitemap'
-  gem 'jekyll-theme-profile' # needed for themeing
+  gem 'jekyll-theme-primerpages' # needed for themeing
+  gem 'jekyll-toc'
 end
 
 group :development do
