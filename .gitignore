@@ -19,3 +19,4 @@ _site/
 **/.jekyll-cache/
 Gemfile.lock
 .env
+/.ruby-lsp/

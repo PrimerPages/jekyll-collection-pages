@@ -28,7 +28,7 @@ describe Jekyll::CollectionPages::CollectionPages do
       expect(field_map.keys).to include('Getting Started', 'Reference', 'Usage')
       field_map.each_value do |documents|
         expect(documents).not_to be_empty
-        expect(documents.all? { |doc| doc.is_a?(Jekyll::Document) }).to be true
+        expect(documents.all?(Jekyll::Document)).to be true
       end
       expect(field_info['template']).to eq('/docs/category/:field/page:num/index.html')
       expect(field_info['permalink']).to eq('/docs/category/:field/')
@@ -65,7 +65,7 @@ describe Jekyll::CollectionPages::CollectionPages do
       generator.generate(site)
       expect(site.pages).not_to be_empty
       expect(site.pages.count).to be > 1
-      expect(site.pages.all? { |page| page.is_a?(Jekyll::CollectionPages::TagPage) }).to be true
+      expect(site.pages.all?(Jekyll::CollectionPages::TagPage)).to be true
       collection_data = site.data['collection_pages']
       expect(collection_data.keys).to include('docs', 'articles')
       docs_info = collection_data['docs']['category']

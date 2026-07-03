@@ -42,6 +42,7 @@ collection_pages:
 ```
 
 Key options:
+
 - `collection`: collection label (matches `collections` config).
 - `field`: front-matter key to group documents (string or list values).
 - `path`: base folder for generated pages (relative to site root).
@@ -71,7 +72,6 @@ Run `bundle exec jekyll serve` and visit the generated paths, e.g. `/docs/catego
 - `page.tag`: value of the current field.
 - `page.posts`: documents in that field bucket.
 - `page.paginator`: pagination data when `paginate` is set (same shape as Jekyll paginator).
-
 
 ```html
 {% raw %}
