@@ -85,8 +85,17 @@ jobs:
         run: .github/build.sh
 
   ci_success:
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: [lint, test, integration]
     steps:
-      - name: Confirm all dependencies succeeded
-        run: echo "All matrix and lint tests passed successfully."
+      - name: Check required job results
+        env:
+          NEEDS_RESULTS: ${{ toJSON(needs) }}
+        run: |
+          echo "$NEEDS_RESULTS" | jq -r 'to_entries[] | "\(.key): \(.value.result)"'
+          if ! echo "$NEEDS_RESULTS" | jq -e 'all(.[]; .result == "success")' > /dev/null; then
+            echo "::error::All required jobs must succeed. A job failed, was cancelled, or was skipped."
+            exit 1
+          fi
+          echo "All required jobs passed!"
