@@ -25,13 +25,19 @@ jobs:
         run: bundle exec rubocop
   # test job
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os || 'ubuntu-latest' }}
     strategy:
       fail-fast: false
       matrix:
         # Test active versions of ruby and github pages combo
         ruby: ['3.2', '3.3', '3.4']
         jekyll: ['3.10.0', '4.3.4', '4.4.0', '4.4.1'] 
+        include:
+          # GitHub Pages compatibility: https://pages.github.com/versions/
+          # This older Ruby patch is unavailable on newer runner images.
+          - ruby: '3.3.4'
+            jekyll: '3.10.0'
+            os: ubuntu-24.04
     name: Test Ruby ${{ matrix.ruby }} / Jekyll ${{ matrix.jekyll }}
     env:
       JEKYLL_VERSION: ${{ matrix.jekyll }}
@@ -54,13 +60,19 @@ jobs:
         run: bundle list
 
   integration:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os || 'ubuntu-latest' }}
     strategy:
       fail-fast: false
       matrix:
         # Test active versions of ruby and github pages combo
         ruby: ['3.2', '3.3', '3.4']
         jekyll: ['3.10.0', '4.3.4', '4.4.0', '4.4.1'] 
+        include:
+          # GitHub Pages compatibility: https://pages.github.com/versions/
+          # This older Ruby patch is unavailable on newer runner images.
+          - ruby: '3.3.4'
+            jekyll: '3.10.0'
+            os: ubuntu-24.04
     name: Build Ruby ${{ matrix.ruby }} / Jekyll ${{ matrix.jekyll }}
     env:
       JEKYLL_VERSION: ${{ matrix.jekyll }}
