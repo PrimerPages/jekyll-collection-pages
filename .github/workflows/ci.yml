@@ -32,9 +32,6 @@ jobs:
         # Test active versions of ruby and github pages combo
         ruby: ['3.2', '3.3', '3.4']
         jekyll: ['3.10.0', '4.3.4', '4.4.0', '4.4.1'] 
-        include:
-          - ruby: '3.3.4'
-            jekyll: '3.10.0'
     name: Test Ruby ${{ matrix.ruby }} / Jekyll ${{ matrix.jekyll }}
     env:
       JEKYLL_VERSION: ${{ matrix.jekyll }}
@@ -64,9 +61,6 @@ jobs:
         # Test active versions of ruby and github pages combo
         ruby: ['3.2', '3.3', '3.4']
         jekyll: ['3.10.0', '4.3.4', '4.4.0', '4.4.1'] 
-        include:
-          - ruby: '3.3.4'
-            jekyll: '3.10.0'
     name: Build Ruby ${{ matrix.ruby }} / Jekyll ${{ matrix.jekyll }}
     env:
       JEKYLL_VERSION: ${{ matrix.jekyll }}
