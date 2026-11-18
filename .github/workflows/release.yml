@@ -4,20 +4,90 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (for example, 1.2.3 or v1.2.3)"
+        required: true
+        type: string
+      dry-run:
+        description: "Build and validate without publishing"
+        default: true
+        type: boolean
 
 jobs:
-  publish:
+  build-gem:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      release-version: ${{ steps.meta.outputs.release-version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set release version
+        id: meta
+        shell: bash
+        env:
+          RELEASE_VERSION: ${{ github.event.release.tag_name || inputs.version }}
+        run: |
+          set -euo pipefail
+          VERSION="${RELEASE_VERSION#v}"
+          bash .github/bump.sh "$VERSION"
+          echo "release-version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.190.0
+
+      - name: Build gem
+        run: gem build jekyll-collection-pages.gemspec
+
+      - name: Validate gem version
+        env:
+          RELEASE_VERSION: ${{ steps.meta.outputs.release-version }}
+        run: |
+          ruby -rrubygems/package -e '
+            package = Gem::Package.new("jekyll-collection-pages-#{ENV.fetch("RELEASE_VERSION")}.gem")
+            abort "Gem version mismatch" unless package.spec.version.to_s == ENV.fetch("RELEASE_VERSION")
+          '
+
+      - name: Upload built gem artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jekyll-collection-pages
+          path: jekyll-collection-pages-${{ steps.meta.outputs.release-version }}.gem
+          if-no-files-found: error
+          retention-days: 7
+
+  publish-gem:
+    needs: build-gem
+    if: ${{ github.event_name == 'release' || !inputs.dry-run }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.190.0
         with:
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 1 # Increment this number if you need to re-download cached gems
-      - name: Release
-        run: .github/release.sh jekyll-collection-pages.gemspec
+          ruby-version: '3.3.4'
+
+      - name: Download built gem artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jekyll-collection-pages
+
+      - name: Publish gem
         env:
-          RUBYGEMS_USERNAME: ${{ secrets.RUBYGEMS_USERNAME }}
-          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          RELEASE_VERSION: ${{ needs.build-gem.outputs.release-version }}
+        run: gem push "jekyll-collection-pages-${RELEASE_VERSION}.gem" --host https://rubygems.org
+
+      - name: Upload gem to GitHub release
+        if: ${{ github.event_name == 'release' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_VERSION: ${{ needs.build-gem.outputs.release-version }}
+        run: gh release upload "$RELEASE_TAG" "jekyll-collection-pages-${RELEASE_VERSION}.gem" --repo "$GITHUB_REPOSITORY" --clobber

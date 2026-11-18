@@ -3,8 +3,8 @@ set -euo pipefail
 
 VERSION_FILE="VERSION"
 
-if [[ $# -lt 1 || $# -gt 2 ]]; then
-  echo "Usage: $0 <version> [--dry-run]"
+if [[ $# -ne 1 ]]; then
+  echo "Usage: $0 <version>"
   exit 1
 fi
 
@@ -22,7 +22,6 @@ if [[ ! -f "$VERSION_FILE" ]]; then
 fi
 
 echo "Bumping version to $new_version in $VERSION_FILE"
-sed -i.bak -E 's/[0-9]+\.[0-9]+\.[0-9]+/'"$new_version"'/' "$VERSION_FILE"
-rm -f "$VERSION_FILE.bak"
+printf '%s\n' "$new_version" > "$VERSION_FILE"
 
 echo "Updated to version $new_version"

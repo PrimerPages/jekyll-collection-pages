@@ -23,6 +23,18 @@ Thank you for your interest in contributing to jekyll-collection-pages! We welco
 3. Provide a clear title and description for your pull request, explaining the changes you've made and why.
 4. Be prepared to address any feedback or questions during the review process.
 
+## Releasing
+
+`VERSION` contains the development placeholder `0.0.0`; do not bump it in pull requests.
+Publishing a GitHub release builds the gem using the release tag as its version
+(for example, `1.2.3` or `v1.2.3`), publishes it to RubyGems using the
+`RUBYGEMS_API_KEY` secret, and attaches the gem to the GitHub release.
+
+To test a release, run the **Release** workflow manually with a version and leave
+**dry-run** enabled. The workflow validates and uploads the built gem as an Actions
+artifact without publishing it. Disable **dry-run** to publish a manually built release.
+Release Drafter maintains release notes without opening version bump pull requests.
+
 ## Reporting Issues
 
 If you find a bug or have a suggestion for improvement:
