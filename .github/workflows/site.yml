@@ -1,91 +1,49 @@
-# Workflow for building and deploying a Jekyll site to GitHub Pages
-name: site
+# This file is generated from athackst/ci/copier/template/.github/workflows/site.yml.jinja.
+# Do not edit directly; update the template instead.
+
+name: Site
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
+  release:
+    types: [published]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('gh-pages-site-pr-{0}', github.event.pull_request.number) || 'gh-pages-site' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true # Enable github pages if it's not
-      - name: Build
-        run: bundle exec jekyll build -s demo
-        env:
-          JEKYLL_ENV: production
-          JEKYLL_GITHUB_TOKEN: ${{ github.token }}
-      - name: HTMLProofer
-        uses: athackst/htmlproofer-action@v0.3.0
-        with:
-          ignore_urls: |
-            https://opensource.org/license/mit/
-          swap_urls: |
-            ^${{ steps.pages.outputs.base_path }}:
-            ^.*${{ steps.pages.outputs.host }}${{ steps.pages.outputs.base_path }}:
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-
-  # Deployment job
-  deploy:
-    if: github.ref == 'refs/heads/main' # Only deploy from the main branch
-    needs: build
+  build-site:
     permissions:
+      contents: read
+      pages: read
+    uses: athackst/ci/.github/workflows/jekyll_site.yml@main
+    with:
+      version: ${{ github.event.release.tag_name || 'dev' }}
+      source: demo
+
+  test-site:
+    needs: build-site
+    permissions:
+      contents: read
+    uses: athackst/ci/.github/workflows/htmlproofer_site.yml@main
+    with:
+      host: ${{ needs.build-site.outputs.host }}
+      base-path: ${{ needs.build-site.outputs.base-path }}
+      artifact-name: ${{ needs.build-site.outputs.artifact-name }}
+
+  deploy-site:
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'release' && github.event.action == 'published') }}
+    needs: build-site
+    permissions:
+      contents: write
       pages: write
       id-token: write
-      actions: read
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  site_success:
-    if: always()
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - run: exit 1
-        # see https://stackoverflow.com/a/67532120/4907315
-        if: >-
-          ${{
-               contains(needs.*.result, 'failure')
-            || contains(needs.*.result, 'cancelled')
-          }}
-      - run: echo "All steps completed successfully"
-      - name: Check rate limit
-        run: |
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /rate_limit
-        env:
-          GH_TOKEN: ${{ github.token }}
+    uses: athackst/ci/.github/workflows/deploy_site.yml@main
+    with:
+      type: branch
+      version: ${{ needs.build-site.outputs.version }}
+    secrets: inherit
