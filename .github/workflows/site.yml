@@ -1,91 +1,100 @@
-# Workflow for building and deploying a Jekyll site to GitHub Pages
-name: site
+# Repository-specific build: the demo needs this Gemfile and the local plugin.
+
+name: Site
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
+  release:
+    types: [published]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('gh-pages-site-pr-{0}', github.event.pull_request.number) || 'gh-pages-site' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  # Build job
-  build:
+  build-site:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      host: ${{ steps.pages.outputs.host }}
+      base-path: ${{ steps.pages.outputs.base_path }}
+      version: ${{ steps.settings.outputs.version }}
+      artifact-name: github-pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true # Enable github pages if it's not
-      - name: Build
-        run: bundle exec jekyll build -s demo
+          bundler-cache: true
+
+      - name: Configure site URLs
+        id: settings
+        env:
+          SITE_VERSION: ${{ github.event.release.tag_name || 'dev' }}
+          SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+          SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          echo "version=$SITE_VERSION" >> "$GITHUB_OUTPUT"
+          ruby -ryaml -e '
+            config = {
+              "url" => ENV.fetch("SITE_ORIGIN"),
+              "baseurl" => "#{ENV.fetch("SITE_BASE_PATH")}/#{ENV.fetch("SITE_VERSION")}",
+              "versions" => {
+                "enabled" => true,
+                "config" => "#{ENV.fetch("SITE_BASE_PATH")}/versions.json",
+                "prefix" => ENV.fetch("SITE_BASE_PATH")
+              }
+            }
+            File.write(File.join(ENV.fetch("RUNNER_TEMP"), "pages.yml"), config.to_yaml)
+          '
+
+      - name: Build demo with local plugin
         env:
           JEKYLL_ENV: production
           JEKYLL_GITHUB_TOKEN: ${{ github.token }}
-      - name: HTMLProofer
-        uses: athackst/htmlproofer-action@v0.3.0
-        with:
-          ignore_urls: |
-            https://opensource.org/license/mit/
-          swap_urls: |
-            ^${{ steps.pages.outputs.base_path }}:
-            ^.*${{ steps.pages.outputs.host }}${{ steps.pages.outputs.base_path }}:
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        run: |
+          bundle exec jekyll build \
+            --source demo \
+            --destination _site \
+            --config "demo/_config.yml,$RUNNER_TEMP/pages.yml" \
+            --trace
 
-  # Deployment job
-  deploy:
-    if: github.ref == 'refs/heads/main' # Only deploy from the main branch
-    needs: build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          name: github-pages
+          path: _site
+
+  test-site:
+    needs: build-site
     permissions:
+      contents: read
+    uses: athackst/ci/.github/workflows/htmlproofer_site.yml@main
+    with:
+      host: ${{ needs.build-site.outputs.host }}
+      base-path: ${{ needs.build-site.outputs.base-path }}
+      artifact-name: ${{ needs.build-site.outputs.artifact-name }}
+
+  deploy-site:
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'release' && github.event.action == 'published') }}
+    needs: build-site
+    permissions:
+      contents: write
       pages: write
       id-token: write
-      actions: read
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  site_success:
-    if: always()
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - run: exit 1
-        # see https://stackoverflow.com/a/67532120/4907315
-        if: >-
-          ${{
-               contains(needs.*.result, 'failure')
-            || contains(needs.*.result, 'cancelled')
-          }}
-      - run: echo "All steps completed successfully"
-      - name: Check rate limit
-        run: |
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /rate_limit
-        env:
-          GH_TOKEN: ${{ github.token }}
+    uses: athackst/ci/.github/workflows/deploy_site.yml@main
+    with:
+      type: branch
+      version: ${{ needs.build-site.outputs.version }}
+    secrets: inherit
