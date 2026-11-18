@@ -1,0 +1,470 @@
+
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-baseurl="/jekyll-collection-pages/dev" data-versioning-enabled="true" data-versions-json="/jekyll-collection-pages/versions.json" data-versioning-prefix="/jekyll-collection-pages">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- HTML Meta Tags -->
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Example configurations | Jekyll Collection Pages plugin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Example configurations" />
+<meta name="author" content="PrimerPages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Copy-ready YAML and Liquid snippets for common collection setups." />
+<meta name="twitter:description" property="og:description" content="Copy-ready YAML and Liquid snippets for common collection setups." />
+<link rel="canonical" href="https://www.primerpages.com/jekyll-collection-pages/dev/docs/examples.html" />
+<meta property="og:url" content="https://www.primerpages.com/jekyll-collection-pages/dev/docs/examples.html" />
+<meta property="og:site_name" content="Jekyll Collection Pages plugin" />
+<meta property="og:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/default.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-11-18T18:46:54+00:00" />
+<meta property="article:modified_time" content="2026-11-18T18:46:54+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/default.png" />
+<meta name="twitter:title" content="Example configurations" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PrimerPages"},"dateModified":"2026-11-18T18:46:54+00:00","datePublished":"2026-11-18T18:46:54+00:00","description":"Copy-ready YAML and Liquid snippets for common collection setups.","headline":"Example configurations","image":"https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/default.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.primerpages.com/jekyll-collection-pages/dev/docs/examples.html"},"url":"https://www.primerpages.com/jekyll-collection-pages/dev/docs/examples.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/jekyll-collection-pages/dev/assets/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/jekyll-collection-pages/dev/assets/css/style.css" rel="stylesheet" type="text/css">
+  
+  <link rel="icon" type="image/x-icon" href="/jekyll-collection-pages/dev/assets/img/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/theme-toggle.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/anchor-links.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/topbar.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/versioning.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/mermaid.js"></script>
+<style>
+</style>
+
+</head>
+
+
+<body class="min-height-full d-flex flex-column">
+    
+
+<header class="AppHeader position-sticky top-0 z-2 border-bottom topbar">
+    <div class="d-flex flex-justify-between p-2 flex-items-center mb-2">
+        <div tabindex="-1" class="AppHeader-item d-flex flex-1 ml-3" id="github-logo">
+            <a href="/jekyll-collection-pages/dev/" class="AppHeader-link d-flex flex-items-center no-underline mr-3 h1">
+                <span class="octicon octicon-mark-github-24"></span>
+                <span class="h3 text-semibold mx-3">Jekyll Collection Pages plugin</span>
+            </a>
+            <span class="d-none d-sm-block flex-content-center ml-2">
+            <details class="version-selector details-reset details-overlay d-none" data-version-selector
+    data-version-unavailable-label="Version info unavailable">
+    <summary class="version-selector__trigger d-flex flex-items-center text-nowrap" aria-haspopup="true">
+        <span class="f6" data-version-current-label></span>
+        <span class="octicon octicon-chevron-down-16 ml-1"></span>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title">Versions</div>
+            </div>
+            <div class="SelectMenu-list" data-version-options>
+                <div class="SelectMenu-item color-fg-muted" data-version-loading>Loading versions...</div>
+            </div>
+            <div class="SelectMenu-footer">
+                <div class="ActionList-sectionDivider mt-0 mb-1"></div>
+                <div class="color-fg-muted f6" data-version-status></div>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+            </span>
+        </div>
+        <div class="AppHeader-item">
+            <div class="primerpages-header-tools" role="group" aria-label="Site tools">
+    
+    <div class="Toggle d-flex flex-items-center">
+    <button id="theme-toggle" class="btn-octicon mr-2 tooltipped tooltipped-sw" aria-label="Color mode" type="button"><span id="theme-icon"
+            class="octicon octicon-moon-24"></span></button>
+</div>
+
+</div>
+
+        </div>
+    </div>
+    <div class="d-flex flex-items-center">
+    </div>
+</header>
+
+    <div class="d-flex flex-1 flex-column">
+    
+
+
+
+
+
+
+<div class="d-xl-flex">
+    <div class="Layout bgColor-default border-right d-none d-xl-block">
+        <div class="Layout-sidebar position-sticky"
+            style="top: var(--topbar-height, 150px); height: calc(100vh - var(--topbar-height, 150px));"
+            >
+            <nav>
+                
+                <div class="d-none d-xl-block bg-primary overflow-y-auto flex-shrink-0 pb-3"
+                    style="height: calc(100vh - var(--topbar-height, 150px) - 38px - 55px);">
+                    <div class="pt-3">
+                        
+                        
+
+
+
+
+<ul data-overflow-nav class="menu ActionList border-0 ml-3">
+  <li class="h4">Getting started
+    <ul>
+      
+      <a href="/jekyll-collection-pages/dev/docs/quick-start.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Quick start
+        </li>
+      </a>
+      
+    </ul>
+  </li>
+  <li class="h4">Reference
+    <ul>
+      
+      <a href="/jekyll-collection-pages/dev/docs/configuration-guide.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Configuration guide
+        </li>
+      </a>
+      
+      
+      <a href="/jekyll-collection-pages/dev/docs/generated-data.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Generated data reference
+        </li>
+      </a>
+      
+      
+      <a href="/jekyll-collection-pages/dev/docs/troubleshooting.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Troubleshooting & FAQ
+        </li>
+      </a>
+      
+    </ul>
+  </li>
+  <li class="h4">Usage
+    <ul>
+      
+      <a href="/jekyll-collection-pages/dev/docs/examples.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" aria-current="page">
+          Example configurations
+        </li>
+      </a>
+      
+      
+      <a href="/jekyll-collection-pages/dev/docs/layout-recipes.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Layout recipes
+        </li>
+      </a>
+      
+    </ul>
+  </li>
+</ul>
+
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xl flex-1  p-responsive pb-6">
+        
+        <div class="py-4 d-flex">
+            <div class="d-xl-none">
+                
+                
+
+
+<script>
+    $(document).ready(function () {
+        const $menu = $("#collection-menu");
+        const $closeButton = $(".close-menu");
+
+        if ($menu.length && $closeButton.length) {
+            $closeButton.click(() => $menu.removeAttr("open")); // Properly closes the dropdown
+        }
+    });
+</script>
+
+<details class="details-reset details-overlay" id="collection-menu">
+    <summary class="btn btn-invisible" aria-haspopup="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title" id="github-logo">
+                    <div class="AppHeader-link d-flex flex-items-center no-underline mr-3">
+                        <span class="h3 color-fg-default text-bold">Documentation</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-justify-end">
+                    <button class="SelectMenu-closeButton close-menu" type="button">
+                        <span class="octicon octicon-x-16"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="SideNav border overflow-y-auto">
+                <div class="SideNav-item no-underline h4">Getting started</div>
+                <a href="/jekyll-collection-pages/dev/docs/quick-start.html" class="SideNav-item" role="menuitem" >Quick start</a>
+                <div class="SideNav-item no-underline h4">Reference</div>
+                <a href="/jekyll-collection-pages/dev/docs/configuration-guide.html" class="SideNav-item" role="menuitem" >Configuration guide</a>
+                <a href="/jekyll-collection-pages/dev/docs/generated-data.html" class="SideNav-item" role="menuitem" >Generated data reference</a>
+                <a href="/jekyll-collection-pages/dev/docs/troubleshooting.html" class="SideNav-item" role="menuitem" >Troubleshooting & FAQ</a>
+                <div class="SideNav-item no-underline h4">Usage</div>
+                <a href="/jekyll-collection-pages/dev/docs/examples.html" class="SideNav-item" role="menuitem"  aria-current="page" >Example configurations</a>
+                <a href="/jekyll-collection-pages/dev/docs/layout-recipes.html" class="SideNav-item" role="menuitem" >Layout recipes</a>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+                
+            </div>
+            
+            
+<div class="Breadcrumb d-flex flex-items-center">
+    <nav aria-label="Breadcrumb" class="f5">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/jekyll-collection-pages/dev/">home</a>
+            </li>
+
+            
+            <li class="breadcrumb-item">
+                <a href="/jekyll-collection-pages/dev/docs">docs</a>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+            
+        </div>
+        <div class="pb-5 p-responsive">
+            <h1 class="border-bottom-0">Example configurations</h1>
+            <h3 class="f3 color-fg-muted pb-3">Copy-ready YAML and Liquid snippets for common collection setups.</h3>
+        </div>
+        <div class="d-flex flex-wrap-reverse">
+            <div class="col-12 col-md-8 markdown-body p-responsive">
+                <p>Use this cookbook to copy working <code class="language-plaintext highlighter-rouge">collection_pages</code> configurations and accompanying Liquid snippets.</p>
+
+<h2 id="blog-categories">Blog categories</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">posts</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">blog/category</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_page.html</span>
+    <span class="na">paginate</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+<p>This configuration uses folder-style pagination such as <code class="language-plaintext highlighter-rouge">/blog/category/reference/</code> and <code class="language-plaintext highlighter-rouge">/blog/category/reference/page2/</code>. Stick with this pattern for the most compatible URLs.</p>
+
+<p>Render a category listing with the exported data registry:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">collection_pages</span><span class="p">.</span><span class="nv">posts</span><span class="p">.</span><span class="nv">category</span><span class="p">.</span><span class="nv">pages</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
+  &lt;h2&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>&lt;/h2&gt;
+  &lt;p&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">docs</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="cp">}}</span> posts&lt;/p&gt;
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<h2 id="documentation--tutorials">Documentation + tutorials</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">docs</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">section</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">documentation/sections</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">doc_section.html</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">tutorials</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">difficulty</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">tutorials/level</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">tutorial_level.html</span>
+    <span class="na">paginate</span><span class="pi">:</span> <span class="m">6</span>
+</code></pre></div></div>
+
+<p>This setup produces unpaginated doc sections and paginated tutorial difficulty indexes. Use the metadata map for quick links and pagination helpers:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">tutorials_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">collection_pages</span><span class="p">.</span><span class="nv">tutorials</span><span class="p">.</span><span class="nv">difficulty</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">tutorials_info</span><span class="p">.</span><span class="nv">pages</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tutorials_info</span><span class="p">.</span><span class="nv">labels</span><span class="p">[</span><span class="nv">label</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
+  &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">meta</span><span class="p">.</span><span class="nv">index</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;View all tutorials for <span class="cp">{{</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="cp">}}</span>&lt;/a&gt;
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<h2 id="project-tags">Project tags</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">projects</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">tags</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">portfolio/tags</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">project_tag.html</span>
+</code></pre></div></div>
+
+<p>In your tag overview page:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">projects_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">collection_pages</span><span class="p">.</span><span class="nv">projects</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">projects_info</span><span class="p">.</span><span class="nv">pages</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">projects_info</span><span class="p">.</span><span class="nv">labels</span><span class="p">[</span><span class="nv">label</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
+  &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">meta</span><span class="p">.</span><span class="nv">index</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="cp">}}</span> (<span class="cp">{{</span><span class="w"> </span><span class="nv">items</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="cp">}}</span>)&lt;/a&gt;
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<h2 id="one-collection-multiple-views">One collection, multiple views</h2>
+
+<p>You can create pages based on multiple fields for the same collection:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">books</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">genre</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">books/genre</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">book_genre.html</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">books</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">author</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">books/author</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">book_author.html</span>
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">site.data.collection_pages.books.genre.pages</code> and <code class="language-plaintext highlighter-rouge">site.data.collection_pages.books.author.pages</code> to populate dashboards, and <code class="language-plaintext highlighter-rouge">site.data.collection_pages.books.genre.labels[label].index.url</code> when you need the generated index URL.</p>
+
+<h2 id="image-gallery-collections">Image gallery collections</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">gallery</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">tags</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">gallery/tags</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">gallery_tag.html</span>
+    <span class="na">paginate</span><span class="pi">:</span> <span class="m">12</span>
+</code></pre></div></div>
+
+<p>Overview pages can link to tag indexes via the metadata map, and each generated page exposes <code class="language-plaintext highlighter-rouge">page.paginator</code> for navigation:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">gallery_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">collection_pages</span><span class="p">.</span><span class="nv">gallery</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">gallery_info</span><span class="p">.</span><span class="nv">pages</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gallery_info</span><span class="p">.</span><span class="nv">labels</span><span class="p">[</span><span class="nv">label</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
+  &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">meta</span><span class="p">.</span><span class="nv">index</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;View all in <span class="cp">{{</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="cp">}}</span>&lt;/a&gt;
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="w"> </span><span class="cp">%}</span>
+  &lt;nav class="pager"&gt;
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="p">.</span><span class="nv">previous_page_path</span><span class="w"> </span><span class="cp">%}</span>
+      &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="p">.</span><span class="nv">previous_page_path</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;Prev&lt;/a&gt;
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+    &lt;span&gt;Page <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="p">.</span><span class="nv">page</span><span class="w"> </span><span class="cp">}}</span> of <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="p">.</span><span class="nv">total_pages</span><span class="w"> </span><span class="cp">}}</span>&lt;/span&gt;
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="p">.</span><span class="nv">next_page_path</span><span class="w"> </span><span class="cp">%}</span>
+      &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">paginator</span><span class="p">.</span><span class="nv">next_page_path</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;Next&lt;/a&gt;
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+  &lt;/nav&gt;
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<p>Because those pagination paths already include the tag directory (<code class="language-plaintext highlighter-rouge">gallery/tags/&lt;label&gt;/…</code>), you can safely pipe them through <code class="language-plaintext highlighter-rouge">relative_url</code> without additional string concatenation.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<ul>
+  <li>Ensure every collection lists <code class="language-plaintext highlighter-rouge">output: true</code> if you expect to link to its documents.</li>
+  <li>Verify each document sets the <code class="language-plaintext highlighter-rouge">field</code> you configured (use <code class="language-plaintext highlighter-rouge">site.collections[collection].docs | map: "path"</code> to inspect).</li>
+  <li>Confirm the layout file exists and uses <code class="language-plaintext highlighter-rouge">or</code> as required.</li>
+  <li>When debugging, dump <code class="language-plaintext highlighter-rouge">site.data.collection_pages | jsonify</code> in a temporary page to inspect the computed groups, metadata, and generated paths.</li>
+</ul>
+
+
+                <!-- Pagination links -->
+                <div class="paginate-container py-3">
+                    <div role="navigation" aria-label="Pagination" class="d-inline-block pagination">
+                        
+                        
+                        <a class="previous_page" rel="prev" href="/jekyll-collection-pages/dev/docs/generated-data.html"
+                            aria-disabled="false">Generated data re...</a>
+                        
+
+                        
+                        <a class="next_page" rel="next" href="/jekyll-collection-pages/dev/docs/layout-recipes.html"
+                            aria-disabled="false">Layout recipes</a>
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Edit link -->
+                
+                <div class="doc-edit-link border-top my-8 py-5">
+                    <a href="https://www.github.com/PrimerPages/jekyll-collection-pages/edit/main/_docs/examples.md">
+                        <span class="octicon octicon-pencil-16"></span>
+                        Edit this page</a>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-4 markdown-body">
+                
+                
+                <div class="position-sticky top-12 ml-5 pb-5">
+                    <h4 class="ml-3 mb-1">In this article</h4>
+                    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#blog-categories">Blog categories</a></li>
+<li class="toc-entry toc-h2"><a href="#documentation--tutorials">Documentation + tutorials</a></li>
+<li class="toc-entry toc-h2"><a href="#project-tags">Project tags</a></li>
+<li class="toc-entry toc-h2"><a href="#one-collection-multiple-views">One collection, multiple views</a></li>
+<li class="toc-entry toc-h2"><a href="#image-gallery-collections">Image gallery collections</a></li>
+<li class="toc-entry toc-h2"><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div><footer>
+   <div class="footer py-3 color-bg-subtle border-top">
+        <div class="container-xl p-responsive-blog f6 py-4 d-sm-flex flex-justify-between flex-row-reverse flex-items-center">
+            <div class="flex-1"></div>
+            <div class="flex-0 mx-auto px-4">
+                <div>Made with <a href="https://www.primerpages.com">PrimerPages</a></div>
+            </div>
+        </div>
+   </div>
+</footer>
+
+</body>
+
+</html>

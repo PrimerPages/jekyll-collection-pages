@@ -1,0 +1,528 @@
+
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-baseurl="/jekyll-collection-pages/dev" data-versioning-enabled="true" data-versions-json="/jekyll-collection-pages/versions.json" data-versioning-prefix="/jekyll-collection-pages">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- HTML Meta Tags -->
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Linking Obsidian and Jekyll | Jekyll Collection Pages plugin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Linking Obsidian and Jekyll" />
+<meta name="author" content="Allison Thackston" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="As a long-time Obsidian user, I’ve fallen in love with its flexibility, linking capabilities, and the sheer joy of connecting ideas across my personal knowledge base. The way Obsidian allows me to create, organize, and interlink my thoughts is nothing short of revolutionary for my workflow. But there’s been one persistent itch I’ve wanted to scratch: how can I easily share select parts of my Obsidian vault with the world?" />
+<meta name="twitter:description" property="og:description" content="As a long-time Obsidian user, I’ve fallen in love with its flexibility, linking capabilities, and the sheer joy of connecting ideas across my personal knowledge base. The way Obsidian allows me to create, organize, and interlink my thoughts is nothing short of revolutionary for my workflow. But there’s been one persistent itch I’ve wanted to scratch: how can I easily share select parts of my Obsidian vault with the world?" />
+<link rel="canonical" href="https://www.primerpages.com/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html" />
+<meta property="og:url" content="https://www.primerpages.com/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html" />
+<meta property="og:site_name" content="Jekyll Collection Pages plugin" />
+<meta property="og:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/post-img-1.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-08-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-08-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/post-img-1.png" />
+<meta name="twitter:title" content="Linking Obsidian and Jekyll" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Allison Thackston"},"dateModified":"2024-08-02T00:00:00+00:00","datePublished":"2024-08-02T00:00:00+00:00","description":"As a long-time Obsidian user, I’ve fallen in love with its flexibility, linking capabilities, and the sheer joy of connecting ideas across my personal knowledge base. The way Obsidian allows me to create, organize, and interlink my thoughts is nothing short of revolutionary for my workflow. But there’s been one persistent itch I’ve wanted to scratch: how can I easily share select parts of my Obsidian vault with the world?","headline":"Linking Obsidian and Jekyll","image":"https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/post-img-1.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.primerpages.com/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html"},"url":"https://www.primerpages.com/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/jekyll-collection-pages/dev/assets/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/jekyll-collection-pages/dev/assets/css/style.css" rel="stylesheet" type="text/css">
+  
+  <link rel="icon" type="image/x-icon" href="/jekyll-collection-pages/dev/assets/img/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/theme-toggle.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/anchor-links.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/topbar.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/versioning.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/mermaid.js"></script>
+<style>
+</style>
+
+</head>
+
+
+<body class="min-height-full d-flex flex-column">
+    
+<script>
+    $(document).ready(function () {
+        $('#expansion-btn').click(function () {
+            $('.Extend').toggleClass('hide-sm');
+        });
+    });
+</script>
+<div class="Header position-sticky top-0 topbar">
+    <div class="flex-1">
+        <div class="d-flex">
+            <div class="Header-item">
+                <button id="expansion-btn" class="btn-octicon mr-2 d-sm-none"><span class="octicon octicon-three-bars-16"></span></button>
+                <a href="/jekyll-collection-pages/dev/" class="Header-link h1 f4 d-flex flex-items-center">
+                      <!-- Use the specified Octicon as the header icon -->
+                    <span class="octicon octicon-mark-github-24"></span>
+                </a>
+            </div>
+            
+            <div class="Header-item Header-link Header-item--full">
+            <a class="Header-link h3" href="/jekyll-collection-pages/dev/">Jekyll Collection Pages plugin</a>
+            <div class="d-inline-block ml-4">
+            <details class="version-selector details-reset details-overlay d-none" data-version-selector
+    data-version-unavailable-label="Version info unavailable">
+    <summary class="version-selector__trigger d-flex flex-items-center text-nowrap" aria-haspopup="true">
+        <span class="f6" data-version-current-label></span>
+        <span class="octicon octicon-chevron-down-16 ml-1"></span>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title">Versions</div>
+            </div>
+            <div class="SelectMenu-list" data-version-options>
+                <div class="SelectMenu-item color-fg-muted" data-version-loading>Loading versions...</div>
+            </div>
+            <div class="SelectMenu-footer">
+                <div class="ActionList-sectionDivider mt-0 mb-1"></div>
+                <div class="color-fg-muted f6" data-version-status></div>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+            </div>
+            </div>
+            <div class="Header-item">
+            <div class="primerpages-header-tools" role="group" aria-label="Site tools">
+    
+    <div class="Toggle d-flex flex-items-center">
+    <button id="theme-toggle" class="btn-octicon mr-2 tooltipped tooltipped-sw" aria-label="Color mode" type="button"><span id="theme-icon"
+            class="octicon octicon-moon-24"></span></button>
+</div>
+
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="d-flex flex-1 flex-column">
+    
+<div class="Blog flex-column flex-1 min-width-0">
+    <div class="BlogHeader position-relative border-top">
+        <div class="container-xl p-responsive">
+            <div class="col-12 offset-lg-1 col-lg-10 col-xl-7 mt-5 mt-lg-10 mb-6 mb-lg-8">
+                <div class="h3-mktg lh-condensed mb-3 color-header-default">Linking Obsidian and Jekyll</div>
+                <p class="f4-mktg color-header-default"></p>
+            </div>
+            <div class="offset-lg-1 col-lg-10">
+                <div class="position-relative z-1">
+                    <div class="image-container">
+                        <img src="/jekyll-collection-pages/dev/assets/img/post-img-1.png" class="cover-image rounded-2" alt="Linking Obsidian and Jekyll" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Blog position-absolute bottom-0 width-full border-top" style="height:88px">
+        </div>
+    </div>
+    <div class="pb-5">
+        <div class="container-xl mx-auto p-responsive">
+            <!-- Post metadata -->
+            <div class="pt-5">
+                <div class="col-12 offset-lg-1 col-lg-10">
+                    <div class="text-mono f5-mktg color-fg-muted mb-12px">Author</div>
+                    <div class="d-flex flex-nowrap pb-1 flex-items-start">
+                        <div class="d-flex flex-wrap">Allison Thackston</div>
+                        <div
+                            class="d-block border-left flex-shrink-0 text-mono f5-mktg color-fg-muted mb-3 ml-auto pl-5">
+                            Aug 02, 2024
+                        </div>
+                    </div>
+                    <div class="color-border-accent-emphasis border-bottom"></div>
+                </div>
+            </div>
+            <div class="mx-auto p-responsive pt-4 pt-md-7 pb-7 pb-md-9">
+                <div class="d-flex flex-wrap">
+                    <div class="col-12 offset-lg-1 col-lg-1">
+                        <ul class="list-style-none d-flex flex-lg-column position-sticky top-12">
+                            <li class="mr-4 mr-lg-0 mb-4">
+                                <a href="https://x.com/share?text=Linking+Obsidian+and+Jekyll&url=https%3A%2F%2Fwww.primerpages.com%2Fjekyll-collection-pages%2Fdev%2Farticles%2Flinking-obsidian-and-jekyll.html"
+                                    target="_blank"
+                                    class="d-flex flex-justify-center flex-items-center border circle social-aside"
+                                    data-proofer-ignore>
+                                    <svg width="20" height="20" viewBox="0 0 1200 1227" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="mr-4 mr-lg-0 mb-4">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.primerpages.com%2Fjekyll-collection-pages%2Fdev%2Farticles%2Flinking-obsidian-and-jekyll.html;t=Linking+Obsidian+and+Jekyll"
+                                    target="_blank"
+                                    class="d-flex flex-justify-center flex-items-center border circle social-aside"
+                                    data-proofer-ignore>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.3 15.4" height="18">
+                                        <path
+                                            d="M14.5 0H.8a.88.88 0 0 0-.8.9v13.6a.88.88 0 0 0 .8.9h7.3v-6h-2V7.1h2V5.4a2.87 2.87 0 0 1 2.5-3.1h.5a10.87 10.87 0 0 1 1.8.1v2.1h-1.3c-1 0-1.1.5-1.1 1.1v1.5h2.3l-.3 2.3h-2v5.9h3.9a.88.88 0 0 0 .9-.8V.8a.86.86 0 0 0-.8-.8z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="mr-4 mr-lg-0 mb-4">
+                                <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.primerpages.com%2Fjekyll-collection-pages%2Fdev%2Farticles%2Flinking-obsidian-and-jekyll.html%2F&title=Linking+Obsidian+and+Jekyll"
+                                    target="_blank"
+                                    class="d-flex flex-justify-center flex-items-center border circle social-aside"
+                                    data-proofer-ignore>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18" height="18">
+                                        <path
+                                            d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-7 col-md-8 markdown-body">
+                        
+                        <p>As a long-time Obsidian user, I’ve fallen in love with its flexibility, linking capabilities, and the sheer joy of connecting ideas across my personal knowledge base. The way Obsidian allows me to create, organize, and interlink my thoughts is nothing short of revolutionary for my workflow. But there’s been one persistent itch I’ve wanted to scratch: how can I easily share select parts of my Obsidian vault with the world?</p>
+
+<p>Enter Jekyll, the static site generator that’s been a staple for developers and bloggers alike. Jekyll’s power in creating fast, efficient websites is undeniable. However, the traditional Jekyll setup, with its focus on the _posts directory and specific naming conventions, always felt at odds with my Obsidian workflow. The thought of manually renaming files, adjusting front matter, and maintaining two separate systems for my notes was, frankly, exhausting.</p>
+
+<p>What I needed was a bridge between these two worlds - a way to harness Obsidian’s note-taking prowess and Jekyll’s publishing capabilities without compromising either. I wanted to write in Obsidian as I always have, with my preferred file names and organization, and then seamlessly publish select notes to my Jekyll site without any file juggling or renaming gymnastics.</p>
+
+<p>That’s where this setup comes in. By leveraging Jekyll collections, smart use of symlinks, and the power of the <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> plugin, we can create a harmonious workflow that respects the Obsidian structure while unlocking Jekyll’s publishing potential.</p>
+
+<h2 id="creating-the-symlink">Creating the Symlink</h2>
+
+<ol>
+  <li>Open your terminal.</li>
+  <li>Navigate to your Jekyll site’s root directory.</li>
+  <li>
+    <p>Create a symlink from your Obsidian vault to a Jekyll collection:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ln</span> <span class="nt">-s</span> /path/to/your/obsidian/vault /path/to/your/jekyll/_articles
+</code></pre></div>    </div>
+
+    <p>Replace <code class="language-plaintext highlighter-rouge">/path/to/your/obsidian/vault</code> with the actual path to your Obsidian vault, and <code class="language-plaintext highlighter-rouge">/path/to/your/jekyll/_articles</code> with the path where you want the collection in your Jekyll site.</p>
+  </li>
+</ol>
+
+<h2 id="setting-up-the-collection">Setting Up the Collection</h2>
+
+<ol>
+  <li>
+    <p>In your Jekyll <code class="language-plaintext highlighter-rouge">_config.yml</code>, add:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">articles</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a default layout for articles in <code class="language-plaintext highlighter-rouge">_layouts/article.html</code>.</p>
+  </li>
+</ol>
+
+<h2 id="enabling-tags">Enabling Tags</h2>
+
+<ol>
+  <li>
+    <p>In <code class="language-plaintext highlighter-rouge">_config.yml</code>, add:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+         <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">articles</span>
+ <span class="na">field</span><span class="pi">:</span> <span class="s">tags</span>
+ <span class="na">path</span><span class="pi">:</span> <span class="s">tags</span>
+ <span class="na">layout</span><span class="pi">:</span> <span class="s">tag_layout.html</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create <code class="language-plaintext highlighter-rouge">_layouts/tag_layout.html</code> for your tag pages.</p>
+  </li>
+</ol>
+
+<h2 id="managing-drafts">Managing Drafts</h2>
+
+<ol>
+  <li>
+    <p>In <code class="language-plaintext highlighter-rouge">_config.yml</code>, add a default front matter for articles:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">articles"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">article"</span>
+      <span class="na">published</span><span class="pi">:</span> <span class="kc">false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In Obsidian, add to your note’s front matter to publish:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">published</span><span class="pi">:</span> <span class="kc">true</span>
+<span class="nn">---</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<ol>
+  <li>Write your notes in Obsidian as usual.</li>
+  <li>Add tags in Obsidian using <code class="language-plaintext highlighter-rouge">#tag</code> syntax or in the front matter.</li>
+  <li>When ready to publish, add <code class="language-plaintext highlighter-rouge">published: true</code> to the note’s front matter.</li>
+  <li>Build your Jekyll site – only published articles will appear.</li>
+</ol>
+
+<p>This setup allows you to seamlessly use Obsidian for note-taking while leveraging Jekyll’s powerful publishing features. The Jekyll Collection Pages plugin handles tag organization, making your content easily navigable.</p>
+
+<p>Remember to gitignore the symlinked directory to avoid committing your entire Obsidian vault!</p>
+
+<p>Happy writing and publishing!</p>
+
+                        <div class="post-tags text-mono f4-mktg mt-8">
+                            <span class="post-tags-label flex-shrink-0 d-inline-block mt-2">Tags: </span>
+                            <ul class="d-inline-block list-style-none color-text-link mb-0">
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/jekyll">jekyll</a></li>
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/obsidian">obsidian</a></li>
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/collections">collections</a></li>
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/symlinks">symlinks</a></li>
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/drafts">drafts</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 markdown-body">
+                        <div class="d-none d-md-block position-sticky top-12 ml-5">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Related container-xl mx-auto p-responsive">
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+      
+    
+
+    
+    
+
+    
+    
+
+    
+  
+
+  
+
+
+
+<h2 class="h5-mktg pb-3 mb-lg-3">Related posts</h2>
+<div class="d-flex flex-wrap gutter">
+
+  
+
+  
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column ">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-indices.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-4.png" width="377" height="200" alt="Generate Index Pages from Your Jekyll Collections">
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-indices.html">Generate Index Pages from Your Jekyll Collections</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0">Introducing automated collection index pages with site.data.collection_pages</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Nov 10, 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column ">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-comparison.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-3.png" width="377" height="200" alt="Jekyll Collection Pages Comparison">
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-comparison.html">Jekyll Collection Pages Comparison</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0"><p>When it comes to organizing content in Jekyll, several plugins offer solutions for handling tags and categories. In this article, we’ll compare three popular options: <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code>, <code class="language-plaintext highlighter-rouge">jekyll-tagging</code>, and <code class="language-plaintext highlighter-rouge">jekyll-category-pages</code>. We’ll explore their features, use cases, and help you decide which might be the best fit for your project.</p>
+</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Aug 02, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column ">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-2.png" width="377" height="200" alt="Using Jekyll for documentation">
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html">Using Jekyll for documentation</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0"><p>In the realm of technical documentation, content is king—but structure is the kingdom. A well-organized documentation site can make the difference between a frustrating user experience and an enlightening one. When users can easily find what they’re looking for, whether through intuitive navigation or efficient search, they’re more likely to engage with and benefit from your documentation.</p>
+</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Aug 02, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+</div>
+
+    </div><footer>
+   <div class="footer py-3 color-bg-subtle border-top">
+        <div class="container-xl p-responsive-blog f6 py-4 d-sm-flex flex-justify-between flex-row-reverse flex-items-center">
+            <div class="flex-1"></div>
+            <div class="flex-0 mx-auto px-4">
+                <div>Made with <a href="https://www.primerpages.com">PrimerPages</a></div>
+            </div>
+        </div>
+   </div>
+</footer>
+
+</body>
+
+</html>

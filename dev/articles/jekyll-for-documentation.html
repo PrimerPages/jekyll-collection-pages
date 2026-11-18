@@ -1,0 +1,817 @@
+
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-baseurl="/jekyll-collection-pages/dev" data-versioning-enabled="true" data-versions-json="/jekyll-collection-pages/versions.json" data-versioning-prefix="/jekyll-collection-pages">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- HTML Meta Tags -->
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Using Jekyll for documentation | Jekyll Collection Pages plugin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Using Jekyll for documentation" />
+<meta name="author" content="Allison Thackston" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In the realm of technical documentation, content is king—but structure is the kingdom. A well-organized documentation site can make the difference between a frustrating user experience and an enlightening one. When users can easily find what they’re looking for, whether through intuitive navigation or efficient search, they’re more likely to engage with and benefit from your documentation." />
+<meta name="twitter:description" property="og:description" content="In the realm of technical documentation, content is king—but structure is the kingdom. A well-organized documentation site can make the difference between a frustrating user experience and an enlightening one. When users can easily find what they’re looking for, whether through intuitive navigation or efficient search, they’re more likely to engage with and benefit from your documentation." />
+<link rel="canonical" href="https://www.primerpages.com/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html" />
+<meta property="og:url" content="https://www.primerpages.com/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html" />
+<meta property="og:site_name" content="Jekyll Collection Pages plugin" />
+<meta property="og:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/post-img-2.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-08-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-08-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/post-img-2.png" />
+<meta name="twitter:title" content="Using Jekyll for documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Allison Thackston"},"dateModified":"2024-08-02T00:00:00+00:00","datePublished":"2024-08-02T00:00:00+00:00","description":"In the realm of technical documentation, content is king—but structure is the kingdom. A well-organized documentation site can make the difference between a frustrating user experience and an enlightening one. When users can easily find what they’re looking for, whether through intuitive navigation or efficient search, they’re more likely to engage with and benefit from your documentation.","headline":"Using Jekyll for documentation","image":"https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/post-img-2.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.primerpages.com/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html"},"url":"https://www.primerpages.com/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/jekyll-collection-pages/dev/assets/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/jekyll-collection-pages/dev/assets/css/style.css" rel="stylesheet" type="text/css">
+  
+  <link rel="icon" type="image/x-icon" href="/jekyll-collection-pages/dev/assets/img/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/theme-toggle.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/anchor-links.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/topbar.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/versioning.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/mermaid.js"></script>
+<style>
+</style>
+
+</head>
+
+
+<body class="min-height-full d-flex flex-column">
+    
+<script>
+    $(document).ready(function () {
+        $('#expansion-btn').click(function () {
+            $('.Extend').toggleClass('hide-sm');
+        });
+    });
+</script>
+<div class="Header position-sticky top-0 topbar">
+    <div class="flex-1">
+        <div class="d-flex">
+            <div class="Header-item">
+                <button id="expansion-btn" class="btn-octicon mr-2 d-sm-none"><span class="octicon octicon-three-bars-16"></span></button>
+                <a href="/jekyll-collection-pages/dev/" class="Header-link h1 f4 d-flex flex-items-center">
+                      <!-- Use the specified Octicon as the header icon -->
+                    <span class="octicon octicon-mark-github-24"></span>
+                </a>
+            </div>
+            
+            <div class="Header-item Header-link Header-item--full">
+            <a class="Header-link h3" href="/jekyll-collection-pages/dev/">Jekyll Collection Pages plugin</a>
+            <div class="d-inline-block ml-4">
+            <details class="version-selector details-reset details-overlay d-none" data-version-selector
+    data-version-unavailable-label="Version info unavailable">
+    <summary class="version-selector__trigger d-flex flex-items-center text-nowrap" aria-haspopup="true">
+        <span class="f6" data-version-current-label></span>
+        <span class="octicon octicon-chevron-down-16 ml-1"></span>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title">Versions</div>
+            </div>
+            <div class="SelectMenu-list" data-version-options>
+                <div class="SelectMenu-item color-fg-muted" data-version-loading>Loading versions...</div>
+            </div>
+            <div class="SelectMenu-footer">
+                <div class="ActionList-sectionDivider mt-0 mb-1"></div>
+                <div class="color-fg-muted f6" data-version-status></div>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+            </div>
+            </div>
+            <div class="Header-item">
+            <div class="primerpages-header-tools" role="group" aria-label="Site tools">
+    
+    <div class="Toggle d-flex flex-items-center">
+    <button id="theme-toggle" class="btn-octicon mr-2 tooltipped tooltipped-sw" aria-label="Color mode" type="button"><span id="theme-icon"
+            class="octicon octicon-moon-24"></span></button>
+</div>
+
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="d-flex flex-1 flex-column">
+    
+<div class="Blog flex-column flex-1 min-width-0">
+    <div class="BlogHeader position-relative border-top">
+        <div class="container-xl p-responsive">
+            <div class="col-12 offset-lg-1 col-lg-10 col-xl-7 mt-5 mt-lg-10 mb-6 mb-lg-8">
+                <div class="h3-mktg lh-condensed mb-3 color-header-default">Using Jekyll for documentation</div>
+                <p class="f4-mktg color-header-default"></p>
+            </div>
+            <div class="offset-lg-1 col-lg-10">
+                <div class="position-relative z-1">
+                    <div class="image-container">
+                        <img src="/jekyll-collection-pages/dev/assets/img/post-img-2.png" class="cover-image rounded-2" alt="Using Jekyll for documentation" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Blog position-absolute bottom-0 width-full border-top" style="height:88px">
+        </div>
+    </div>
+    <div class="pb-5">
+        <div class="container-xl mx-auto p-responsive">
+            <!-- Post metadata -->
+            <div class="pt-5">
+                <div class="col-12 offset-lg-1 col-lg-10">
+                    <div class="text-mono f5-mktg color-fg-muted mb-12px">Author</div>
+                    <div class="d-flex flex-nowrap pb-1 flex-items-start">
+                        <div class="d-flex flex-wrap">Allison Thackston</div>
+                        <div
+                            class="d-block border-left flex-shrink-0 text-mono f5-mktg color-fg-muted mb-3 ml-auto pl-5">
+                            Aug 02, 2024
+                        </div>
+                    </div>
+                    <div class="color-border-accent-emphasis border-bottom"></div>
+                </div>
+            </div>
+            <div class="mx-auto p-responsive pt-4 pt-md-7 pb-7 pb-md-9">
+                <div class="d-flex flex-wrap">
+                    <div class="col-12 offset-lg-1 col-lg-1">
+                        <ul class="list-style-none d-flex flex-lg-column position-sticky top-12">
+                            <li class="mr-4 mr-lg-0 mb-4">
+                                <a href="https://x.com/share?text=Using+Jekyll+for+documentation&url=https%3A%2F%2Fwww.primerpages.com%2Fjekyll-collection-pages%2Fdev%2Farticles%2Fjekyll-for-documentation.html"
+                                    target="_blank"
+                                    class="d-flex flex-justify-center flex-items-center border circle social-aside"
+                                    data-proofer-ignore>
+                                    <svg width="20" height="20" viewBox="0 0 1200 1227" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="mr-4 mr-lg-0 mb-4">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.primerpages.com%2Fjekyll-collection-pages%2Fdev%2Farticles%2Fjekyll-for-documentation.html;t=Using+Jekyll+for+documentation"
+                                    target="_blank"
+                                    class="d-flex flex-justify-center flex-items-center border circle social-aside"
+                                    data-proofer-ignore>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.3 15.4" height="18">
+                                        <path
+                                            d="M14.5 0H.8a.88.88 0 0 0-.8.9v13.6a.88.88 0 0 0 .8.9h7.3v-6h-2V7.1h2V5.4a2.87 2.87 0 0 1 2.5-3.1h.5a10.87 10.87 0 0 1 1.8.1v2.1h-1.3c-1 0-1.1.5-1.1 1.1v1.5h2.3l-.3 2.3h-2v5.9h3.9a.88.88 0 0 0 .9-.8V.8a.86.86 0 0 0-.8-.8z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="mr-4 mr-lg-0 mb-4">
+                                <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.primerpages.com%2Fjekyll-collection-pages%2Fdev%2Farticles%2Fjekyll-for-documentation.html%2F&title=Using+Jekyll+for+documentation"
+                                    target="_blank"
+                                    class="d-flex flex-justify-center flex-items-center border circle social-aside"
+                                    data-proofer-ignore>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18" height="18">
+                                        <path
+                                            d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-7 col-md-8 markdown-body">
+                        
+                        <p>In the realm of technical documentation, content is king—but structure is the kingdom. A well-organized documentation site can make the difference between a frustrating user experience and an enlightening one. When users can easily find what they’re looking for, whether through intuitive navigation or efficient search, they’re more likely to engage with and benefit from your documentation.</p>
+
+<p>Jekyll, with its flexibility and power, has long been a favorite tool for creating documentation sites. But when it comes to organizing complex documentation structures, especially those with multiple sections, nested categories, and interrelated content, even Jekyll can use a boost. This is where the <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> plugin shines, offering enhanced capabilities for structuring and organizing your content.</p>
+
+<h2 id="structuring-your-documentation-site">Structuring Your Documentation Site</h2>
+
+<p>The foundation of a great documentation site is its structure. A well-planned structure makes navigation intuitive and helps users quickly find the information they need.</p>
+
+<h3 id="planning-your-content-hierarchy">Planning Your Content Hierarchy</h3>
+
+<p>Before diving into Jekyll configurations, take some time to plan your content hierarchy. Consider the following:</p>
+
+<ol>
+  <li>What are the main sections of your documentation?</li>
+  <li>Are there logical subsections within these main sections?</li>
+  <li>How might users expect to navigate through your content?</li>
+</ol>
+
+<p>For example, a software documentation site might have a structure like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Getting Started
+  - Installation
+  - Quick Start Guide
+- User Guide
+  - Basic Features
+  - Advanced Features
+- API Reference
+- Troubleshooting
+- FAQs
+</code></pre></div></div>
+
+<h3 id="setting-up-collections">Setting Up Collections</h3>
+
+<p>With your content hierarchy in mind, it’s time to set up Jekyll collections. Collections in Jekyll allow you to group related content, which is perfect for documentation sites.</p>
+
+<p>In your <code class="language-plaintext highlighter-rouge">_config.yml</code> file, define your collections:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">getting_started</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/docs/getting-started/:path/</span>
+  <span class="na">user_guide</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/docs/user-guide/:path/</span>
+  <span class="na">api_reference</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/docs/api/:path/</span>
+  <span class="na">troubleshooting</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/docs/troubleshooting/:path/</span>
+</code></pre></div></div>
+
+<h3 id="utilizing-jekyll-collection-pages">Utilizing Jekyll Collection Pages</h3>
+
+<p>Now, let’s configure the Jekyll Collection Pages plugin to work with our structure. Add this to your <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">getting_started</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">docs/getting-started/categories</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_page.html</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">user_guide</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">docs/user-guide/categories</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_page.html</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">api_reference</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">docs/api/categories</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_page.html</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">troubleshooting</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">docs/troubleshooting/categories</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_page.html</span>
+</code></pre></div></div>
+
+<p>This configuration tells the plugin to create category pages for each of our documentation sections.</p>
+
+<h3 id="example-structure">Example Structure</h3>
+
+<p>Let’s look at how to implement this structure. Create directories for each collection in your Jekyll project:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_getting_started/
+_user_guide/
+_api_reference/
+_troubleshooting/
+</code></pre></div></div>
+
+<p>Then, create Markdown files in these directories. For example, in <code class="language-plaintext highlighter-rouge">_getting_started/</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Installation</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">Setup</span>
+<span class="nn">---</span>
+
+<span class="gh"># Installation Guide</span>
+
+Here's how to install the software...
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> plugin will automatically create a category page at <code class="language-plaintext highlighter-rouge">/docs/getting-started/categories/setup/index.html</code> listing all documents in the “Setup” category.</p>
+
+<h2 id="implementing-effective-search">Implementing Effective Search</h2>
+
+<p>Even with the best structure, users often rely on search to find specific information quickly. Let’s implement a search function using Lunr.js, a lightweight, full-text search library for client-side applications.</p>
+
+<h3 id="setting-up-lunrjs">Setting Up Lunr.js</h3>
+
+<p>First, add Lunr.js to your project. You can do this by adding the following to your default layout’s <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> section:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/lunr/lunr.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Next, create a JSON file that Lunr.js will use as its search index. Add this to your <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">jekyll-collection-pages</span>
+  <span class="pi">-</span> <span class="s">jekyll-lunr-js-search</span>
+</code></pre></div></div>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">search.json</code> file in your root directory:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+layout: null
+---
+[
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">collection</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">collections</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">doc</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">docs</span><span class="w"> </span><span class="cp">%}</span>
+      {
+        "title": <span class="cp">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="cp">}}</span>,
+        "content": <span class="cp">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="cp">}}</span>,
+        "url": <span class="cp">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="cp">}}</span>
+      }<span class="cp">{%</span><span class="w"> </span><span class="nt">unless</span><span class="w"> </span><span class="nb">forloop.last</span><span class="w"> </span><span class="cp">%}</span>,<span class="cp">{%</span><span class="w"> </span><span class="nt">endunless</span><span class="w"> </span><span class="cp">%}</span>
+    <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+  <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+]
+
+</code></pre></div></div>
+
+<h3 id="implementing-the-search-interface">Implementing the Search Interface</h3>
+
+<p>Create a search page (<code class="language-plaintext highlighter-rouge">search.html</code> in your root directory):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+layout: default
+title: Search
+---
+
+<span class="nt">&lt;h1&gt;</span>Search<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"search-input"</span> <span class="na">placeholder=</span><span class="s">"Search..."</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"search-results"</span><span class="nt">&gt;&lt;/ul&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">store</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="nx">collection</span> <span class="k">in</span> <span class="nx">site</span><span class="p">.</span><span class="nx">collections</span> <span class="o">%</span><span class="p">}</span>
+      <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="nx">doc</span> <span class="k">in</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">docs</span> <span class="o">%</span><span class="p">}</span>
+        <span class="dl">"</span><span class="s2">{{ doc.url | slugify }}</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">{{ doc.title | xml_escape }}</span><span class="dl">"</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">:</span> <span class="p">{{</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">content</span> <span class="o">|</span> <span class="nx">strip_html</span> <span class="o">|</span> <span class="nx">strip_newlines</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="p">}},</span>
+          <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">{{ doc.url | xml_escape }}</span><span class="dl">"</span>
+        <span class="p">}</span>
+        <span class="p">{</span><span class="o">%</span> <span class="nx">unless</span> <span class="nx">forloop</span><span class="p">.</span><span class="nx">last</span> <span class="o">%</span><span class="p">},{</span><span class="o">%</span> <span class="nx">endunless</span> <span class="o">%</span><span class="p">}</span>
+      <span class="p">{</span><span class="o">%</span> <span class="nx">endfor</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%</span> <span class="nx">endfor</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">};</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/lunr.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/search.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="language-plaintext highlighter-rouge">search.js</code> in your JavaScript directory:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nf">displaySearchResults</span><span class="p">(</span><span class="nx">results</span><span class="p">,</span> <span class="nx">store</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">searchResults</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">search-results</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">appendString</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+
+      <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">store</span><span class="p">[</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">ref</span><span class="p">];</span>
+        <span class="nx">appendString</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">&lt;li&gt;&lt;a href="</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">"&gt;&lt;h3&gt;</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;/h3&gt;&lt;/a&gt;</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">appendString</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">&lt;p&gt;</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">...&lt;/p&gt;&lt;/li&gt;</span><span class="dl">'</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="nx">searchResults</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">appendString</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">searchResults</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;li&gt;No results found&lt;/li&gt;</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nf">getQueryVariable</span><span class="p">(</span><span class="nx">variable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">vars</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">&amp;</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">vars</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">pair</span> <span class="o">=</span> <span class="nx">vars</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">=</span><span class="dl">'</span><span class="p">);</span>
+
+      <span class="k">if </span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="nx">variable</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">decodeURIComponent</span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\+</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1">%20</span><span class="dl">'</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">searchTerm</span> <span class="o">=</span> <span class="nf">getQueryVariable</span><span class="p">(</span><span class="dl">'</span><span class="s1">query</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="k">if </span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">search-box</span><span class="dl">'</span><span class="p">).</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">,</span> <span class="nx">searchTerm</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nf">lunr</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">boost</span><span class="p">:</span> <span class="mi">10</span> <span class="p">});</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nb">window</span><span class="p">.</span><span class="nx">store</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">idx</span><span class="p">.</span><span class="nf">add</span><span class="p">({</span>
+        <span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">store</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">title</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">store</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">content</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">idx</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">);</span>
+    <span class="nf">displaySearchResults</span><span class="p">(</span><span class="nx">results</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">store</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">})();</span>
+
+</code></pre></div></div>
+
+<h2 id="leveraging-jekyll-collection-pages-for-an-organization">Leveraging jekyll-collection-pages for an Organization</h2>
+
+<p>The Jekyll Collection Pages plugin really shines when it comes to organizing your content. Let’s explore some advanced uses.</p>
+
+<h3 id="automatic-category-and-tag-pages">Automatic Category and Tag Pages</h3>
+
+<p>We’ve already set up basic category pages. Let’s customize their layout. Create <code class="language-plaintext highlighter-rouge">_layouts/category_page.html</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+layout: default
+---
+<span class="nt">&lt;h1&gt;</span>{{ page.tag }}<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;ul&gt;</span>
+{% for post in page.posts %}
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url | relative_url }}"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+{% endfor %}
+<span class="nt">&lt;/ul&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="creating-a-dynamic-sidebar">Creating a Dynamic Sidebar</h3>
+
+<p>Use collection data to generate a dynamic sidebar. Add this to your default layout:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"sidebar"</span><span class="nt">&gt;</span>
+  {% for collection in site.collections %}
+    {% if collection.label != "posts" %}
+      <span class="nt">&lt;h3&gt;</span>{{ collection.label | capitalize | replace: "_", " " }}<span class="nt">&lt;/h3&gt;</span>
+      <span class="nt">&lt;ul&gt;</span>
+        {% for doc in collection.docs %}
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ doc.url | relative_url }}"</span><span class="nt">&gt;</span>{{ doc.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        {% endfor %}
+      <span class="nt">&lt;/ul&gt;</span>
+    {% endif %}
+  {% endfor %}
+
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<h3 id="implementing-breadcrumbs">Implementing Breadcrumbs</h3>
+
+<p>Add breadcrumbs to your document layout for easy navigation:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"breadcrumbs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ '/' | relative_url }}"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span> <span class="ni">&amp;raquo;</span>
+  {% assign crumbs = page.url | split: '/' %}
+  {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+      {{ page.title }}
+    {% else %}
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}"</span><span class="nt">&gt;</span>{{ crumb | replace: '-', ' ' | capitalize }}<span class="nt">&lt;/a&gt;</span> <span class="ni">&amp;raquo;</span>
+    {% endif %}
+  {% endfor %}
+  
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="cross-linking-and-related-content">Cross-linking and Related Content</h3>
+
+<p>Utilize tags for suggesting related documents. In your document layout:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% if page.tags %}
+  <span class="nt">&lt;h3&gt;</span>Related Documents<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    {% assign maxRelated = 4 %}
+    {% assign minCommonTags =  1 %}
+    {% assign maxRelatedCounter = 0 %}
+
+    {% for doc in site.documents %}
+      {% assign sameTagCount = 0 %}
+      {% for tag in doc.tags %}
+        {% if page.tags contains tag %}
+          {% assign sameTagCount = sameTagCount | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      {% if sameTagCount &gt;= minCommonTags %}
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ doc.url | relative_url }}"</span><span class="nt">&gt;</span>{{ doc.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+        {% if maxRelatedCounter &gt;= maxRelated %}
+          {% break %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  <span class="nt">&lt;/ul&gt;</span>
+{% endif %}
+
+</code></pre></div></div>
+
+<h2 id="best-practices-and-tips">Best Practices and Tips</h2>
+
+<ol>
+  <li>
+    <p><strong>Consistent Front Matter</strong>: Establish a template for front matter across your documents. This ensures consistency and makes it easier to implement site-wide features.</p>
+  </li>
+  <li>
+    <p><strong>Versioning Documentation</strong>: For software documentation, consider using Git branches for different versions. You can then build separate sites for each version.</p>
+  </li>
+  <li>
+    <p><strong>Handling Images and Assets</strong>: Store images in an <code class="language-plaintext highlighter-rouge">assets</code> folder within each collection. This keeps your content organized and makes it easy to move or refactor sections.</p>
+  </li>
+</ol>
+
+<h2 id="case-study-refactoring-an-existing-documentation-site">Case Study: Refactoring an Existing Documentation Site</h2>
+
+<p>Let’s say we have an existing documentation site with a flat structure, where all documents are in the <code class="language-plaintext highlighter-rouge">_posts</code> folder. Here’s how we might refactor it:</p>
+
+<p>Before:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_posts/
+  2023-01-01-installation.md
+  2023-01-02-quick-start.md
+  2023-01-03-advanced-features.md
+  2023-01-04-api-reference.md
+  2023-01-05-troubleshooting.md
+</code></pre></div></div>
+
+<p>After:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_getting_started/
+  installation.md
+  quick-start.md
+_user_guide/
+  advanced-features.md
+_api_reference/
+  index.md
+_troubleshooting/
+  common-issues.md
+</code></pre></div></div>
+
+<p>This refactoring, combined with the Jekyll Collection Pages plugin configuration we discussed earlier, results in:</p>
+
+<ul>
+  <li>Clearer content organization</li>
+  <li>Automatically generated category pages</li>
+  <li>Easier navigation with breadcrumbs and dynamic sidebar</li>
+  <li>Improved search functionality</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>By leveraging Jekyll’s collection feature and the power of the Jekyll Collection Pages plugin, you can create a documentation site that’s not only comprehensive but also user-friendly and easy to maintain. The key takeaways are:</p>
+
+<ol>
+  <li>Plan your content structure carefully</li>
+  <li>Use collections to organize your content logically</li>
+  <li>Implement search to help users find information quickly</li>
+  <li>Utilize the Jekyll Collection Pages plugin to automate category page creation and enhance organization</li>
+  <li>Implement features like breadcrumbs and related content to improve navigation</li>
+</ol>
+
+<p>With these strategies in place, your Jekyll documentation site will be well-structured, easily navigable, and primed for growth. Happy documenting!</p>
+
+                        <div class="post-tags text-mono f4-mktg mt-8">
+                            <span class="post-tags-label flex-shrink-0 d-inline-block mt-2">Tags: </span>
+                            <ul class="d-inline-block list-style-none color-text-link mb-0">
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/jekyll">jekyll</a></li>
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/documentation">documentation</a></li>
+                                <li class="d-inline-block mt-2 mb-0"><a href="/jekyll-collection-pages/dev/tags/collections">collections</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 markdown-body">
+                        <div class="d-none d-md-block position-sticky top-12 ml-5">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Related container-xl mx-auto p-responsive">
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+      
+    
+
+    
+    
+
+    
+    
+
+    
+  
+    
+
+    
+    
+
+    
+    
+
+    
+  
+
+  
+
+
+
+<h2 class="h5-mktg pb-3 mb-lg-3">Related posts</h2>
+<div class="d-flex flex-wrap gutter">
+
+  
+
+  
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column ">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-indices.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-4.png" width="377" height="200" alt="Generate Index Pages from Your Jekyll Collections">
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-indices.html">Generate Index Pages from Your Jekyll Collections</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0">Introducing automated collection index pages with site.data.collection_pages</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Nov 10, 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column ">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-comparison.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-3.png" width="377" height="200" alt="Jekyll Collection Pages Comparison">
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-comparison.html">Jekyll Collection Pages Comparison</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0"><p>When it comes to organizing content in Jekyll, several plugins offer solutions for handling tags and categories. In this article, we’ll compare three popular options: <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code>, <code class="language-plaintext highlighter-rouge">jekyll-tagging</code>, and <code class="language-plaintext highlighter-rouge">jekyll-category-pages</code>. We’ll explore their features, use cases, and help you decide which might be the best fit for your project.</p>
+</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Aug 02, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column ">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-1.png" width="377" height="200" alt="Linking Obsidian and Jekyll">
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html">Linking Obsidian and Jekyll</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0"><p>As a long-time Obsidian user, I’ve fallen in love with its flexibility, linking capabilities, and the sheer joy of connecting ideas across my personal knowledge base. The way Obsidian allows me to create, organize, and interlink my thoughts is nothing short of revolutionary for my workflow. But there’s been one persistent itch I’ve wanted to scratch: how can I easily share select parts of my Obsidian vault with the world?</p>
+</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Aug 02, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+</div>
+
+    </div><footer>
+   <div class="footer py-3 color-bg-subtle border-top">
+        <div class="container-xl p-responsive-blog f6 py-4 d-sm-flex flex-justify-between flex-row-reverse flex-items-center">
+            <div class="flex-1"></div>
+            <div class="flex-0 mx-auto px-4">
+                <div>Made with <a href="https://www.primerpages.com">PrimerPages</a></div>
+            </div>
+        </div>
+   </div>
+</footer>
+
+</body>
+
+</html>

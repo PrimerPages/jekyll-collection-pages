@@ -1,0 +1,308 @@
+
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-baseurl="/jekyll-collection-pages/dev" data-versioning-enabled="true" data-versions-json="/jekyll-collection-pages/versions.json" data-versioning-prefix="/jekyll-collection-pages">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- HTML Meta Tags -->
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>jekyll-collection-pages demo | Jekyll Collection Pages plugin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="jekyll-collection-pages demo" />
+<meta name="author" content="PrimerPages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A plugin for creating index pages for a collection." />
+<meta name="twitter:description" property="og:description" content="A plugin for creating index pages for a collection." />
+<link rel="canonical" href="https://www.primerpages.com/jekyll-collection-pages/dev/" />
+<meta property="og:url" content="https://www.primerpages.com/jekyll-collection-pages/dev/" />
+<meta property="og:site_name" content="Jekyll Collection Pages plugin" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="jekyll-collection-pages demo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"PrimerPages"},"description":"A plugin for creating index pages for a collection.","headline":"jekyll-collection-pages demo","name":"Jekyll Collection Pages plugin","url":"https://www.primerpages.com/jekyll-collection-pages/dev/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/jekyll-collection-pages/dev/assets/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/jekyll-collection-pages/dev/assets/css/style.css" rel="stylesheet" type="text/css">
+  
+  <link rel="icon" type="image/x-icon" href="/jekyll-collection-pages/dev/assets/img/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/theme-toggle.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/anchor-links.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/topbar.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/versioning.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/mermaid.js"></script>
+<style>
+</style>
+
+</head>
+
+
+<body class="min-height-full d-flex flex-column">
+    <div class="Profile text-center mt-3">
+
+<div class="Masthead">
+    <div class="CircleBadge" style="width: 256px;" >
+      <a href="/jekyll-collection-pages/dev/">
+        <img src="/jekyll-collection-pages/dev/assets/img/jekyll-collection-pages.png" alt="Jekyll Collection Pages plugin" >
+      </a>
+    </div>
+
+  <h1 class="text-center my-3 lh-condensed overflow-wrap-word">Jekyll Collection Pages plugin</h1>
+</div>
+
+</div>
+<div class="Header z-2 position-sticky top-0 topbar">
+    <div class="container-xl d-flex flex-row flex-1">
+        <div class="d-flex flex-sm-grow-0 flex-justify-start">
+            <div class="d-flex d-sm-none">
+                
+<script>
+    $(document).ready(function () {
+        const $menu = $("#nav-menu");
+        const $closeButton = $(".close-menu");
+
+        if ($menu.length && $closeButton.length) {
+            $closeButton.click(() => $menu.removeAttr("open")); // Properly closes the dropdown
+        }
+    });
+</script>
+<details class="details-reset details-overlay" id="nav-menu">
+    <summary class="AppHeader-button btn btn-invisible" aria-haspopup="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title" id="github-logo">
+                    <a href="/jekyll-collection-pages/dev/" class="AppHeader-link d-flex flex-items-center no-underline mr-3">
+                        <img class="avatar img-cover circle" height="32" width="32" alt="Jekyll Collection Pages plugin"
+                            src="/jekyll-collection-pages/dev/assets/img/jekyll-collection-pages.png">
+                        <span class="h4 text-semibold mx-3">Jekyll Collection Pages plugin</span>
+                    </a>
+                </div>
+                <div class="d-flex flex-justify-end">
+                    <button class="SelectMenu-closeButton close-menu" type="button">
+                        <span class="octicon octicon-x-16"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="SelectMenu-list">
+            </div>
+            <div class="SelectMenu-footer">
+                <div class="ActionList-sectionDivider mt-0 mb-1"></div>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+            </div>
+            <div class="d-flex">
+                <div class="m-2">
+                <details class="version-selector details-reset details-overlay d-none" data-version-selector
+    data-version-unavailable-label="Version info unavailable">
+    <summary class="version-selector__trigger d-flex flex-items-center text-nowrap" aria-haspopup="true">
+        <span class="f6" data-version-current-label></span>
+        <span class="octicon octicon-chevron-down-16 ml-1"></span>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title">Versions</div>
+            </div>
+            <div class="SelectMenu-list" data-version-options>
+                <div class="SelectMenu-item color-fg-muted" data-version-loading>Loading versions...</div>
+            </div>
+            <div class="SelectMenu-footer">
+                <div class="ActionList-sectionDivider mt-0 mb-1"></div>
+                <div class="color-fg-muted f6" data-version-status></div>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+                </div>
+                <div class="Header-item">
+                <div class="primerpages-header-tools" role="group" aria-label="Site tools">
+    
+    <div class="Toggle d-flex flex-items-center">
+    <button id="theme-toggle" class="btn-octicon mr-2 tooltipped tooltipped-sw" aria-label="Color mode" type="button"><span id="theme-icon"
+            class="octicon octicon-moon-24"></span></button>
+</div>
+
+</div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+    <div class="d-flex flex-1 flex-column">
+    
+<div class="Page flex-column flex-1 min-width-0 py-6">
+    <div class="container-xl mx-auto p-responsive">
+        
+        
+        <h1 class="h3-mktg mt-6 mb-4">Jekyll-collection-pages demo</h1>
+        
+        <div class="markdown-body">
+            <h1 id="welcome-to-the-jekyll-collection-pages-demo">Welcome to the jekyll-collection-pages Demo</h1>
+
+<p>Discover how jekyll-collection-pages can transform your site’s organization and navigation.</p>
+
+<h2 id="what-is-jekyll-collection-pages">What is jekyll-collection-pages?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> is a powerful plugin that enhances Jekyll’s built-in collections feature. It allows you to:</p>
+
+<ul>
+  <li>Automatically generate category and tag pages for your collections</li>
+  <li>Create custom layouts for different types of content</li>
+  <li>Implement pagination for your collection pages</li>
+  <li>Organize your content with unprecedented flexibility</li>
+</ul>
+
+<h2 id="explore">Explore</h2>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>See how <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> organizes technical documentation:</p>
+<ul>
+  <li><a href="/jekyll-collection-pages/dev/docs/">Browse Documentation</a></li>
+</ul>
+
+<h3 id="articles">Articles</h3>
+
+<p>See how <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> can organize collections like posts:</p>
+
+<ul>
+  <li><a href="/jekyll-collection-pages/dev/directory/">Generated pages directory</a></li>
+  <li><a href="/jekyll-collection-pages/dev/tags/">Tag index</a></li>
+  <li><a href="/jekyll-collection-pages/dev/gallery/">Tag gallery</a></li>
+</ul>
+
+<h2 id="get-started">Get Started</h2>
+
+<p>Ready to use <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> in your own project?</p>
+
+<ol>
+  <li><a href="/jekyll-collection-pages/dev/docs/quick-start.html">Quick Start Tutorial</a></li>
+  <li><a href="/jekyll-collection-pages/dev/docs/configuration-guide.html">Configuration Guide</a></li>
+  <li><a href="/jekyll-collection-pages/dev/docs/troubleshooting.html">Troubleshooting and Tips</a></li>
+</ol>
+
+<h2 id="news">News</h2>
+
+<div class="d-flex flex-wrap gutter-spacious">
+<!-- This loops through the articles -->
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column border-top">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-indices.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-4.png" width="377" height="200" alt="Generate Index Pages from Your Jekyll Collections" />
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-collection-pages-indices.html">Generate Index Pages from Your Jekyll Collections</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0">Introducing automated collection index pages with site.data.collection_pages</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Nov 10, 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column border-top">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-1.png" width="377" height="200" alt="Linking Obsidian and Jekyll" />
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/linking-obsidian-and-jekyll.html">Linking Obsidian and Jekyll</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0"><p>As a long-time Obsidian user, I’ve fallen in love with its flexibility, linking capabilities, and the sheer joy of connecting ideas across my personal knowledge base. The way Obsidian allows me to create, organize, and interlink my thoughts is nothing short of revolutionary for my workflow. But there’s been one persistent itch I’ve wanted to scratch: how can I easily share select parts of my Obsidian vault with the world?</p>
+</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Aug 02, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Post card-->
+<div class="col-sm-6 col-lg-4 ">
+  <div class="py-4 d-flex flex-column border-top">
+    <div class="image-container">
+      <a href="/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html">
+        <img class="rounded-2" src="/jekyll-collection-pages/dev/assets/img/post-img-2.png" width="377" height="200" alt="Using Jekyll for documentation" />
+      </a>
+    </div>
+    <h3 class="h6-mktg mb-12px">
+      <a class="Link--primary" href="/jekyll-collection-pages/dev/articles/jekyll-for-documentation.html">Using Jekyll for documentation</a>
+    </h3>
+    <div class="f4-mktg color-fg-muted mb-0"><p>In the realm of technical documentation, content is king—but structure is the kingdom. A well-organized documentation site can make the difference between a frustrating user experience and an enlightening one. When users can easily find what they’re looking for, whether through intuitive navigation or efficient search, they’re more likely to engage with and benefit from your documentation.</p>
+</div>
+    <div class="mt-14px">
+      <div class="d-flex flex-items-center">
+        <div class="d-flex flex-items-end flex-wrap">
+          <span class="mr-3 mr-12px mt-1 f5-mktg text-bold">Allison Thackston</span>
+          <span class="d-inline-block f5-mktg text-mono color-fg-muted mt-1">Aug 02, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<h2 id="community-and-support">Community and Support</h2>
+
+<ul>
+  <li><a href="https://github.com/PrimerPages/jekyll-collection-pages">GitHub Repository</a></li>
+  <li><a href="https://github.com/PrimerPages/jekyll-collection-pages/issues">Report an Issue</a></li>
+  <li><a href="/jekyll-collection-pages/dev/contributing.md">Contribution Guidelines</a></li>
+</ul>
+
+        </div>
+        <div class="flex-1"></div>
+    </div>
+</div>
+
+    </div><footer>
+   <div class="footer py-3 color-bg-subtle border-top">
+        <div class="container-xl p-responsive-blog f6 py-4 d-sm-flex flex-justify-between flex-row-reverse flex-items-center">
+            <div class="flex-1"></div>
+            <div class="flex-0 mx-auto px-4">
+                <div>Made with <a href="https://www.primerpages.com">PrimerPages</a></div>
+            </div>
+        </div>
+   </div>
+</footer>
+
+</body>
+
+</html>

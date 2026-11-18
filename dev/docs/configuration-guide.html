@@ -1,0 +1,462 @@
+
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-baseurl="/jekyll-collection-pages/dev" data-versioning-enabled="true" data-versions-json="/jekyll-collection-pages/versions.json" data-versioning-prefix="/jekyll-collection-pages">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- HTML Meta Tags -->
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Configuration guide | Jekyll Collection Pages plugin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Configuration guide" />
+<meta name="author" content="PrimerPages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Reference for every collection_pages option, defaults, and validation tips." />
+<meta name="twitter:description" property="og:description" content="Reference for every collection_pages option, defaults, and validation tips." />
+<link rel="canonical" href="https://www.primerpages.com/jekyll-collection-pages/dev/docs/configuration-guide.html" />
+<meta property="og:url" content="https://www.primerpages.com/jekyll-collection-pages/dev/docs/configuration-guide.html" />
+<meta property="og:site_name" content="Jekyll Collection Pages plugin" />
+<meta property="og:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/default.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-11-18T18:46:54+00:00" />
+<meta property="article:modified_time" content="2026-11-18T18:46:54+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/default.png" />
+<meta name="twitter:title" content="Configuration guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PrimerPages"},"dateModified":"2026-11-18T18:46:54+00:00","datePublished":"2026-11-18T18:46:54+00:00","description":"Reference for every collection_pages option, defaults, and validation tips.","headline":"Configuration guide","image":"https://www.primerpages.com/jekyll-collection-pages/dev/assets/img/default.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.primerpages.com/jekyll-collection-pages/dev/docs/configuration-guide.html"},"url":"https://www.primerpages.com/jekyll-collection-pages/dev/docs/configuration-guide.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/jekyll-collection-pages/dev/assets/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/jekyll-collection-pages/dev/assets/css/style.css" rel="stylesheet" type="text/css">
+  
+  <link rel="icon" type="image/x-icon" href="/jekyll-collection-pages/dev/assets/img/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/theme-toggle.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/anchor-links.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/topbar.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/versioning.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="/jekyll-collection-pages/dev/assets/js/mermaid.js"></script>
+<style>
+</style>
+
+</head>
+
+
+<body class="min-height-full d-flex flex-column">
+    
+
+<header class="AppHeader position-sticky top-0 z-2 border-bottom topbar">
+    <div class="d-flex flex-justify-between p-2 flex-items-center mb-2">
+        <div tabindex="-1" class="AppHeader-item d-flex flex-1 ml-3" id="github-logo">
+            <a href="/jekyll-collection-pages/dev/" class="AppHeader-link d-flex flex-items-center no-underline mr-3 h1">
+                <span class="octicon octicon-mark-github-24"></span>
+                <span class="h3 text-semibold mx-3">Jekyll Collection Pages plugin</span>
+            </a>
+            <span class="d-none d-sm-block flex-content-center ml-2">
+            <details class="version-selector details-reset details-overlay d-none" data-version-selector
+    data-version-unavailable-label="Version info unavailable">
+    <summary class="version-selector__trigger d-flex flex-items-center text-nowrap" aria-haspopup="true">
+        <span class="f6" data-version-current-label></span>
+        <span class="octicon octicon-chevron-down-16 ml-1"></span>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title">Versions</div>
+            </div>
+            <div class="SelectMenu-list" data-version-options>
+                <div class="SelectMenu-item color-fg-muted" data-version-loading>Loading versions...</div>
+            </div>
+            <div class="SelectMenu-footer">
+                <div class="ActionList-sectionDivider mt-0 mb-1"></div>
+                <div class="color-fg-muted f6" data-version-status></div>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+            </span>
+        </div>
+        <div class="AppHeader-item">
+            <div class="primerpages-header-tools" role="group" aria-label="Site tools">
+    
+    <div class="Toggle d-flex flex-items-center">
+    <button id="theme-toggle" class="btn-octicon mr-2 tooltipped tooltipped-sw" aria-label="Color mode" type="button"><span id="theme-icon"
+            class="octicon octicon-moon-24"></span></button>
+</div>
+
+</div>
+
+        </div>
+    </div>
+    <div class="d-flex flex-items-center">
+    </div>
+</header>
+
+    <div class="d-flex flex-1 flex-column">
+    
+
+
+
+
+
+
+<div class="d-xl-flex">
+    <div class="Layout bgColor-default border-right d-none d-xl-block">
+        <div class="Layout-sidebar position-sticky"
+            style="top: var(--topbar-height, 150px); height: calc(100vh - var(--topbar-height, 150px));"
+            >
+            <nav>
+                
+                <div class="d-none d-xl-block bg-primary overflow-y-auto flex-shrink-0 pb-3"
+                    style="height: calc(100vh - var(--topbar-height, 150px) - 38px - 55px);">
+                    <div class="pt-3">
+                        
+                        
+
+
+
+
+<ul data-overflow-nav class="menu ActionList border-0 ml-3">
+  <li class="h4">Getting started
+    <ul>
+      
+      <a href="/jekyll-collection-pages/dev/docs/quick-start.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Quick start
+        </li>
+      </a>
+      
+    </ul>
+  </li>
+  <li class="h4">Reference
+    <ul>
+      
+      <a href="/jekyll-collection-pages/dev/docs/configuration-guide.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" aria-current="page">
+          Configuration guide
+        </li>
+      </a>
+      
+      
+      <a href="/jekyll-collection-pages/dev/docs/generated-data.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Generated data reference
+        </li>
+      </a>
+      
+      
+      <a href="/jekyll-collection-pages/dev/docs/troubleshooting.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Troubleshooting & FAQ
+        </li>
+      </a>
+      
+    </ul>
+  </li>
+  <li class="h4">Usage
+    <ul>
+      
+      <a href="/jekyll-collection-pages/dev/docs/examples.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Example configurations
+        </li>
+      </a>
+      
+      
+      <a href="/jekyll-collection-pages/dev/docs/layout-recipes.html" class="ActionListItem-label no-underline">
+        <li class="menu-item ActionList-item border-0" >
+          Layout recipes
+        </li>
+      </a>
+      
+    </ul>
+  </li>
+</ul>
+
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xl flex-1  p-responsive pb-6">
+        
+        <div class="py-4 d-flex">
+            <div class="d-xl-none">
+                
+                
+
+
+<script>
+    $(document).ready(function () {
+        const $menu = $("#collection-menu");
+        const $closeButton = $(".close-menu");
+
+        if ($menu.length && $closeButton.length) {
+            $closeButton.click(() => $menu.removeAttr("open")); // Properly closes the dropdown
+        }
+    });
+</script>
+
+<details class="details-reset details-overlay" id="collection-menu">
+    <summary class="btn btn-invisible" aria-haspopup="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </summary>
+    <details-menu class="SelectMenu" role="menu">
+        <div class="SelectMenu-modal">
+
+            <div class="SelectMenu-header">
+                <div tabindex="-1" class="SelectMenu-title" id="github-logo">
+                    <div class="AppHeader-link d-flex flex-items-center no-underline mr-3">
+                        <span class="h3 color-fg-default text-bold">Documentation</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-justify-end">
+                    <button class="SelectMenu-closeButton close-menu" type="button">
+                        <span class="octicon octicon-x-16"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="SideNav border overflow-y-auto">
+                <div class="SideNav-item no-underline h4">Getting started</div>
+                <a href="/jekyll-collection-pages/dev/docs/quick-start.html" class="SideNav-item" role="menuitem" >Quick start</a>
+                <div class="SideNav-item no-underline h4">Reference</div>
+                <a href="/jekyll-collection-pages/dev/docs/configuration-guide.html" class="SideNav-item" role="menuitem"  aria-current="page" >Configuration guide</a>
+                <a href="/jekyll-collection-pages/dev/docs/generated-data.html" class="SideNav-item" role="menuitem" >Generated data reference</a>
+                <a href="/jekyll-collection-pages/dev/docs/troubleshooting.html" class="SideNav-item" role="menuitem" >Troubleshooting & FAQ</a>
+                <div class="SideNav-item no-underline h4">Usage</div>
+                <a href="/jekyll-collection-pages/dev/docs/examples.html" class="SideNav-item" role="menuitem" >Example configurations</a>
+                <a href="/jekyll-collection-pages/dev/docs/layout-recipes.html" class="SideNav-item" role="menuitem" >Layout recipes</a>
+            </div>
+        </div>
+    </details-menu>
+</details>
+
+                
+            </div>
+            
+            
+<div class="Breadcrumb d-flex flex-items-center">
+    <nav aria-label="Breadcrumb" class="f5">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/jekyll-collection-pages/dev/">home</a>
+            </li>
+
+            
+            <li class="breadcrumb-item">
+                <a href="/jekyll-collection-pages/dev/docs">docs</a>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+            
+        </div>
+        <div class="pb-5 p-responsive">
+            <h1 class="border-bottom-0">Configuration guide</h1>
+            <h3 class="f3 color-fg-muted pb-3">Reference for every collection_pages option, defaults, and validation tips.</h3>
+        </div>
+        <div class="d-flex flex-wrap-reverse">
+            <div class="col-12 col-md-8 markdown-body p-responsive">
+                <p>This guide describes the configuration options available in <code class="language-plaintext highlighter-rouge">jekyll-collection-pages</code> and how they interact. Use it as the single reference while wiring the plugin into your site.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Add a <code class="language-plaintext highlighter-rouge">collection_pages</code> entry to <code class="language-plaintext highlighter-rouge">_config.yml</code>. Each entry targets one collection and one front-matter field:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">docs</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">docs/category</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_layout.html</span>
+    <span class="na">paginate</span><span class="pi">:</span> <span class="m">6</span>
+</code></pre></div></div>
+
+<p>You can declare multiple collections or multiple fields for the same collection by adding more entries to the array:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">docs</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">articles</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+
+<span class="na">collection_pages</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">docs</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">category</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">docs/category</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">category_layout.html</span>
+    <span class="na">paginate</span><span class="pi">:</span> <span class="m">6</span>
+  <span class="pi">-</span> <span class="na">collection</span><span class="pi">:</span> <span class="s">articles</span>
+    <span class="na">field</span><span class="pi">:</span> <span class="s">tags</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">articles/tags</span>
+    <span class="na">layout</span><span class="pi">:</span> <span class="s">tags_layout.html</span>
+    <span class="na">paginate</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+<p>If you only need a single entry, <code class="language-plaintext highlighter-rouge">collection_pages</code> can also be a hash (the plugin normalises it internally). The array form keeps things consistent once you add more targets.</p>
+
+<p>Each <code class="language-plaintext highlighter-rouge">path</code> above is treated as a template—directory and can take <code class="language-plaintext highlighter-rouge">:field</code> and <code class="language-plaintext highlighter-rouge">:num</code> as placeholders.  It is recommended to set only set the directory since values automatically expand to <code class="language-plaintext highlighter-rouge">&lt;path&gt;/:field/page:num/index.html</code>.  The first page, and when pagination is off the generator will create pages in <code class="language-plaintext highlighter-rouge">&lt;path&gt;/:field/index.html</code>.</p>
+
+<h2 id="configuration-options">Configuration options</h2>
+
+<h3 id="collection"><code class="language-plaintext highlighter-rouge">collection</code></h3>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li>Required: ✔</li>
+  <li>Description: Collection label from your <code class="language-plaintext highlighter-rouge">collections</code> configuration.</li>
+</ul>
+
+<h3 id="field"><code class="language-plaintext highlighter-rouge">field</code></h3>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li>Required: ✔</li>
+  <li>Description: Front-matter key used to group documents. Supports scalar values (e.g. <code class="language-plaintext highlighter-rouge">"category"</code>) and array values (e.g. <code class="language-plaintext highlighter-rouge">"tags"</code>).</li>
+</ul>
+
+<p>Make sure every document you expect to index sets this field. When the field holds an array, the plugin creates one page per value.</p>
+
+<h3 id="path"><code class="language-plaintext highlighter-rouge">path</code></h3>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li>Required: ✔</li>
+  <li>Description: Path template relative to the site source. It can also include a <code class="language-plaintext highlighter-rouge">:field</code> and a <code class="language-plaintext highlighter-rouge">:num</code> placeholder which are appended to the path if they are ommitted <code class="language-plaintext highlighter-rouge">:field/page:num/index.html</code> (recommended).
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">:field</code>: This placeholder is for the value of the field for the page.</li>
+      <li><code class="language-plaintext highlighter-rouge">:num</code>: This placeholder is for the page number of the pagination.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Rules enforced by the generator:</p>
+
+<ul>
+  <li>When <code class="language-plaintext highlighter-rouge">:num</code> is present it must appear after <code class="language-plaintext highlighter-rouge">:field</code>, and the two placeholders cannot live in the same segment.</li>
+  <li>Paths ending in <code class="language-plaintext highlighter-rouge">.html</code>/<code class="language-plaintext highlighter-rouge">.htm</code> must include the required placeholders explicitly.</li>
+  <li>Leaving <code class="language-plaintext highlighter-rouge">path</code> blank defaults to <code class="language-plaintext highlighter-rouge">&lt;collection&gt;/:field/index.html</code> (or <code class="language-plaintext highlighter-rouge">&lt;collection&gt;/:field/page:num/index.html</code> when paginated).</li>
+</ul>
+
+<h3 id="layout"><code class="language-plaintext highlighter-rouge">layout</code></h3>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li>Required: ✖ (default: <code class="language-plaintext highlighter-rouge">collection_layout.html</code>)</li>
+  <li>Description: Layout file in <code class="language-plaintext highlighter-rouge">_layouts/</code> to render the generated page.</li>
+</ul>
+
+<p>The plugin copies <code class="language-plaintext highlighter-rouge">page.posts</code>, <code class="language-plaintext highlighter-rouge">page.tag</code>, and optional <code class="language-plaintext highlighter-rouge">page.paginator</code> into the layout context.</p>
+
+<h3 id="paginate"><code class="language-plaintext highlighter-rouge">paginate</code></h3>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">Integer</code></li>
+  <li>Required: ✖</li>
+  <li>Description: When present and positive, splits the documents into pages of the given size. Pagination behaves like Jekyll’s built-in paginator (<code class="language-plaintext highlighter-rouge">page.paginator</code> exposes <code class="language-plaintext highlighter-rouge">page</code>, <code class="language-plaintext highlighter-rouge">total_pages</code>, <code class="language-plaintext highlighter-rouge">previous_page_path</code>, <code class="language-plaintext highlighter-rouge">next_page_path</code>, etc.) and the generated paths already include the tag directory (e.g. <code class="language-plaintext highlighter-rouge">docs/category/getting-started/</code>, <code class="language-plaintext highlighter-rouge">docs/category/getting-started/page2.html</code>), so piping them through <code class="language-plaintext highlighter-rouge">relative_url</code> yields working links.</li>
+</ul>
+
+<p>Set <code class="language-plaintext highlighter-rouge">paginate</code> to <code class="language-plaintext highlighter-rouge">nil</code>, omit the key, or use a non-positive number to render a single page per label. Non-numeric values raise an error during the build, so typos like <code class="language-plaintext highlighter-rouge">"ten"</code> fail fast.</p>
+
+<h2 id="generated-data">Generated data</h2>
+
+<p>At build time the plugin exports <code class="language-plaintext highlighter-rouge">site.data.collection_pages[collection_name][field]</code>, which contains:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">template</code> → the sanitized template used to create each index. Directory values inherit <code class="language-plaintext highlighter-rouge">&lt;path&gt;/:field/index.html</code> and add <code class="language-plaintext highlighter-rouge">/page:num/</code> only when pagination is enabled (e.g. <code class="language-plaintext highlighter-rouge">/docs/category/:field/index.html</code> or <code class="language-plaintext highlighter-rouge">/docs/category/:field/page:num/index.html</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">permalink</code> → the sanitized template for the index with placeholders intact (no <code class="language-plaintext highlighter-rouge">:num</code>, since it always points to page one, e.g. <code class="language-plaintext highlighter-rouge">/docs/category/:field/</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">pages</code> → documents grouped by label (<code class="language-plaintext highlighter-rouge">{ label =&gt; [documents...] }</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">labels</code>: metadata describing the generated index pages</li>
+</ul>
+
+<p>Use <code class="language-plaintext highlighter-rouge">pages</code> to feed existing includes, and <code class="language-plaintext highlighter-rouge">labels[label].index.url</code> when you need the generated index URL.</p>
+
+<p>See the <a href="/jekyll-collection-pages/dev/docs/generated-data.html">Generated data reference</a> for usage patterns and Liquid snippets.</p>
+
+<h2 id="validation-tips">Validation tips</h2>
+
+<ul>
+  <li>Ensure the target collection has <code class="language-plaintext highlighter-rouge">output: true</code>, otherwise links from index pages may 404.</li>
+  <li>Double-check that the <code class="language-plaintext highlighter-rouge">field</code> exists in every document; documents missing the field are skipped.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">bundle exec jekyll build --trace</code> with <code class="language-plaintext highlighter-rouge">JEKYLL_LOG_LEVEL=debug</code> to see the plugin’s log output (e.g. total pages generated).</li>
+  <li>Inspect <code class="language-plaintext highlighter-rouge">site.data.collection_pages</code> in a rendered page (<code class="language-plaintext highlighter-rouge">{{ site.data.collection_pages | jsonify }}</code>) when debugging Liquid loops.</li>
+</ul>
+
+<p>Ready to dive deeper? Explore the <a href="/jekyll-collection-pages/dev/docs/examples.html">examples</a> for real-world configurations and the <a href="/jekyll-collection-pages/dev/docs/layout-recipes.html">layout recipes</a> to customise the rendered pages.</p>
+
+
+                <!-- Pagination links -->
+                <div class="paginate-container py-3">
+                    <div role="navigation" aria-label="Pagination" class="d-inline-block pagination">
+                        
+                        
+                        <a class="previous_page" rel="prev" href="/jekyll-collection-pages/dev/docs/quick-start.html"
+                            aria-disabled="false">Quick start</a>
+                        
+
+                        
+                        <a class="next_page" rel="next" href="/jekyll-collection-pages/dev/docs/generated-data.html"
+                            aria-disabled="false">Generated data re...</a>
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Edit link -->
+                
+                <div class="doc-edit-link border-top my-8 py-5">
+                    <a href="https://www.github.com/PrimerPages/jekyll-collection-pages/edit/main/_docs/configuration-guide.md">
+                        <span class="octicon octicon-pencil-16"></span>
+                        Edit this page</a>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-4 markdown-body">
+                
+                
+                <div class="position-sticky top-12 ml-5 pb-5">
+                    <h4 class="ml-3 mb-1">In this article</h4>
+                    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#overview">Overview</a></li>
+<li class="toc-entry toc-h2"><a href="#configuration-options">Configuration options</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#collection">collection</a></li>
+<li class="toc-entry toc-h3"><a href="#field">field</a></li>
+<li class="toc-entry toc-h3"><a href="#path">path</a></li>
+<li class="toc-entry toc-h3"><a href="#layout">layout</a></li>
+<li class="toc-entry toc-h3"><a href="#paginate">paginate</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#generated-data">Generated data</a></li>
+<li class="toc-entry toc-h2"><a href="#validation-tips">Validation tips</a></li>
+</ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div><footer>
+   <div class="footer py-3 color-bg-subtle border-top">
+        <div class="container-xl p-responsive-blog f6 py-4 d-sm-flex flex-justify-between flex-row-reverse flex-items-center">
+            <div class="flex-1"></div>
+            <div class="flex-0 mx-auto px-4">
+                <div>Made with <a href="https://www.primerpages.com">PrimerPages</a></div>
+            </div>
+        </div>
+   </div>
+</footer>
+
+</body>
+
+</html>

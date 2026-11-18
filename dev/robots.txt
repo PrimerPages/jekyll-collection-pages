@@ -1,0 +1,1 @@
+Sitemap: https://www.primerpages.com/jekyll-collection-pages/dev/sitemap.xml
